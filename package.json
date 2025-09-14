@@ -1,8 +1,8 @@
 {
   "name": "boundless-edge",
   "version": "0.0.1",
-  "description": "boundless edge",
-  "productName": "Quasar App",
+  "description": "Boundless Edge - Transforming Ideas into Reality. Professional web development, mobile apps, cloud solutions, and digital transformation services.",
+  "productName": "Boundless Edge",
   "author": "akoni mayowa",
   "private": true,
   "scripts": {
@@ -13,28 +13,30 @@
     "build": "quasar build"
   },
   "dependencies": {
-    "axios": "^1.2.1",
-    "vue-i18n": "^9.2.2",
-    "pinia": "^2.0.11",
+    "@emailjs/browser": "^4.4.1",
     "@quasar/extras": "^1.16.4",
+    "axios": "^1.2.1",
+    "pinia": "^2.0.11",
     "quasar": "^2.16.0",
     "vue": "^3.4.18",
+    "vue-i18n": "^9.2.2",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {
+    "@intlify/vite-plugin-vue-i18n": "^3.3.1",
+    "@netlify/functions": "^4.2.5",
+    "@quasar/app-vite": "^1.9.0",
+    "@types/node": "^20.14.8",
     "@typescript-eslint/eslint-plugin": "^7.16.0",
     "@typescript-eslint/parser": "^7.16.0",
-    "vite-plugin-checker": "^0.8.0",
-    "vue-tsc": "^2.0.29",
+    "autoprefixer": "^10.4.21",
     "eslint": "^8.57.0",
-    "eslint-plugin-vue": "^9.0.0",
     "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-vue": "^9.0.0",
     "prettier": "^2.5.1",
-    "@types/node": "^20.14.8",
-    "@intlify/vite-plugin-vue-i18n": "^3.3.1",
-    "@quasar/app-vite": "^1.9.0",
-    "autoprefixer": "^10.4.2",
-    "typescript": "~5.5.4"
+    "typescript": "~5.5.4",
+    "vite-plugin-checker": "^0.8.0",
+    "vue-tsc": "^2.0.29"
   },
   "engines": {
     "node": "^20 || ^18 || ^16",

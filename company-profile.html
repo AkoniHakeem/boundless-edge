@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boundless Edge - Digital Transformation Partners</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: 'Inter', sans-serif;
+        line-height: 1.6;
+        color: #1f2937;
+        background: #0f172a;
+        min-height: 100vh;
+      }
+
+      .container {
+        max-width: 1400px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .container::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(59,130,246,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="200" cy="200" r="300" fill="url(%23g)"/><circle cx="800" cy="600" r="250" fill="url(%23g)"/><circle cx="600" cy="300" r="200" fill="url(%23g)"/></svg>')
+          no-repeat center;
+        background-size: cover;
+        pointer-events: none;
+      }
+
+      /* Header Section */
+      .header {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.95) 0%,
+          rgba(30, 41, 59, 0.95) 50%,
+          rgba(51, 65, 85, 0.95) 100%
+        );
+        color: white;
+        padding: 80px 60px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+      }
+
+      .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80')
+          center/cover;
+        opacity: 0.15;
+        z-index: 1;
+      }
+
+      .header::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(147, 51, 234, 0.1)
+        );
+        z-index: 2;
+      }
+
+      .header-content {
+        position: relative;
+        z-index: 3;
+      }
+
+      .company-logo {
+        font-size: 5rem;
+        font-weight: 800;
+        margin-bottom: 24px;
+        text-shadow: 0 0 30px rgba(59, 130, 246, 0.5);
+        background: linear-gradient(135deg, #60a5fa, #c084fc, #38bdf8);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        letter-spacing: -2px;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
+
+      @keyframes glow {
+        from {
+          filter: drop-shadow(0 0 20px rgba(59, 130, 246, 0.3));
+        }
+        to {
+          filter: drop-shadow(0 0 30px rgba(147, 51, 234, 0.5));
+        }
+      }
+
+      .tagline {
+        font-size: 1.5rem;
+        opacity: 0.9;
+        font-weight: 300;
+        letter-spacing: 1px;
+        max-width: 800px;
+        margin: 0 auto;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .download-btn {
+        position: absolute;
+        top: 40px;
+        right: 60px;
+        background: rgba(59, 130, 246, 0.2);
+        border: 2px solid rgba(59, 130, 246, 0.3);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 50px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(20px);
+        z-index: 4;
+      }
+
+      .download-btn:hover {
+        background: rgba(59, 130, 246, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(59, 130, 246, 0.4);
+      }
+
+      /* Content Sections */
+      .section {
+        padding: 100px 60px;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        background: rgba(15, 23, 42, 0.5);
+        backdrop-filter: blur(10px);
+        position: relative;
+      }
+
+      .section:last-child {
+        border-bottom: none;
+      }
+
+      .section-title {
+        font-size: 3.5rem;
+        color: #f1f5f9;
+        margin-bottom: 50px;
+        text-align: center;
+        position: relative;
+        font-weight: 700;
+        letter-spacing: -1px;
+      }
+
+      .section-title::after {
+        content: '';
+        width: 120px;
+        height: 6px;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        position: absolute;
+        bottom: -15px;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 3px;
+        box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        margin-top: 60px;
+        align-items: center;
+      }
+
+      .about-text {
+        font-size: 1.2rem;
+        line-height: 1.8;
+        color: #cbd5e1;
+      }
+
+      .about-text p {
+        margin-bottom: 20px;
+      }
+
+      .about-text strong {
+        color: #60a5fa;
+        font-weight: 600;
+      }
+
+      .about-image {
+        width: 100%;
+        height: 400px;
+        background: url('https://images.unsplash.com/photo-1560472354-b33ff0c44a43?ixlib=rb-4.0.3&auto=format&fit=crop&w=1026&q=80')
+          center/cover;
+        border-radius: 20px;
+        position: relative;
+        overflow: hidden;
+        box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+      }
+
+      .about-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.8),
+          rgba(147, 51, 234, 0.6)
+        );
+      }
+
+      .about-image-content {
+        position: relative;
+        z-index: 2;
+        padding: 40px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        color: white;
+        text-align: center;
+      }
+
+      .about-image-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+        font-weight: 600;
+      }
+
+      .about-image-content p {
+        font-size: 1rem;
+        opacity: 0.9;
+        margin-bottom: 30px;
+      }
+
+      /* Mission/Vision Cards */
+      .mission-vision {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .card {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.8),
+          rgba(51, 65, 85, 0.6)
+        );
+        border-radius: 20px;
+        padding: 40px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.4s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(147, 51, 234, 0.1)
+        );
+        opacity: 0;
+        transition: opacity 0.3s ease;
+      }
+
+      .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 30px 60px rgba(59, 130, 246, 0.2);
+      }
+
+      .card:hover::before {
+        opacity: 1;
+      }
+
+      .card h3 {
+        color: #f1f5f9;
+        margin-bottom: 20px;
+        font-size: 1.6rem;
+        font-weight: 600;
+        position: relative;
+        z-index: 2;
+      }
+
+      .card p,
+      .card ul {
+        color: #cbd5e1;
+        line-height: 1.7;
+        position: relative;
+        z-index: 2;
+      }
+
+      .card li {
+        margin: 12px 0;
+        color: #94a3b8;
+      }
+
+      /* Portfolio Items */
+      .portfolio-item {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.9),
+          rgba(15, 23, 42, 0.8)
+        );
+        margin-bottom: 50px;
+        border-radius: 24px;
+        overflow: hidden;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.4s ease;
+      }
+
+      .portfolio-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.3);
+      }
+
+      .portfolio-header {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.9) 0%,
+          rgba(147, 51, 234, 0.8) 100%
+        );
+        color: white;
+        padding: 50px;
+        display: flex;
+        align-items: center;
+        gap: 30px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .portfolio-header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')
+          center/cover;
+        opacity: 0.2;
+      }
+
+      .portfolio-header * {
+        position: relative;
+        z-index: 2;
+      }
+
+      .portfolio-icon {
+        font-size: 4rem;
+        opacity: 0.9;
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+      }
+
+      .portfolio-title {
+        font-size: 2.2rem;
+        font-weight: 700;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      }
+
+      .portfolio-subtitle {
+        font-size: 1.1rem;
+        opacity: 0.9;
+        margin-top: 8px;
+        font-weight: 300;
+      }
+
+      .portfolio-content {
+        padding: 50px;
+        background: rgba(15, 23, 42, 0.6);
+      }
+
+      .portfolio-description {
+        font-size: 1.2rem;
+        margin-bottom: 35px;
+        color: #cbd5e1;
+        line-height: 1.8;
+      }
+
+      .features-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-bottom: 35px;
+      }
+
+      .feature-item {
+        display: flex;
+        align-items: start;
+        gap: 15px;
+        padding: 20px;
+        background: rgba(30, 41, 59, 0.5);
+        border-radius: 12px;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .feature-item:hover {
+        background: rgba(59, 130, 246, 0.1);
+        border-color: rgba(59, 130, 246, 0.3);
+      }
+
+      .feature-bullet {
+        color: #60a5fa;
+        font-weight: bold;
+        margin-top: 5px;
+        font-size: 1.2rem;
+      }
+
+      .feature-item span:last-child {
+        color: #e2e8f0;
+        line-height: 1.6;
+      }
+
+      .portfolio-link {
+        display: inline-block;
+        background: linear-gradient(135deg, #3b82f6, #8b5cf6);
+        color: white;
+        padding: 16px 32px;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+      }
+
+      .portfolio-link:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        filter: brightness(110%);
+      }
+
+      /* Tech Stack */
+      .tech-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .tech-category {
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.8),
+          rgba(51, 65, 85, 0.6)
+        );
+        padding: 40px;
+        border-radius: 20px;
+        border-left: 6px solid #3b82f6;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .tech-category:hover {
+        transform: translateX(10px);
+        box-shadow: 0 20px 40px rgba(59, 130, 246, 0.1);
+      }
+
+      .tech-category h4 {
+        color: #f1f5f9;
+        margin-bottom: 25px;
+        font-size: 1.5rem;
+        font-weight: 600;
+      }
+
+      .tech-list {
+        list-style: none;
+      }
+
+      .tech-list li {
+        padding: 12px 0;
+        border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+        color: #cbd5e1;
+        font-size: 1rem;
+        transition: color 0.2s ease;
+      }
+
+      .tech-list li:hover {
+        color: #60a5fa;
+      }
+
+      .tech-list li:last-child {
+        border-bottom: none;
+      }
+
+      /* Contact Section */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 40px;
+        margin-top: 60px;
+      }
+
+      .contact-item {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 30px;
+        background: linear-gradient(
+          135deg,
+          rgba(30, 41, 59, 0.8),
+          rgba(51, 65, 85, 0.6)
+        );
+        border-radius: 16px;
+        backdrop-filter: blur(20px);
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .contact-item:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(147, 51, 234, 0.1)
+        );
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(59, 130, 246, 0.2);
+      }
+
+      .contact-icon {
+        font-size: 2rem;
+        color: #60a5fa;
+        filter: drop-shadow(0 0 10px rgba(96, 165, 250, 0.5));
+      }
+
+      .contact-text {
+        color: #f1f5f9;
+        font-weight: 600;
+        font-size: 1.1rem;
+      }
+
+      .contact-item > div > div:last-child {
+        color: #cbd5e1;
+        margin-top: 5px;
+        font-size: 0.95rem;
+      }
+
+      .contact-section-intro {
+        text-align: center;
+        font-size: 1.3rem;
+        margin-bottom: 50px;
+        color: #cbd5e1;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .contact-section-intro strong {
+        color: #60a5fa;
+        font-weight: 600;
+      }
+
+      .gov-excellence {
+        background: linear-gradient(
+          135deg,
+          rgba(59, 130, 246, 0.1),
+          rgba(147, 51, 234, 0.1)
+        );
+        border: 1px solid rgba(59, 130, 246, 0.2);
+        border-radius: 20px;
+        padding: 50px;
+        margin-top: 60px;
+        backdrop-filter: blur(20px);
+      }
+
+      .excellence-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-top: 40px;
+      }
+
+      .excellence-item {
+        background: rgba(30, 41, 59, 0.5);
+        padding: 30px;
+        border-radius: 16px;
+        border: 1px solid rgba(148, 163, 184, 0.1);
+        transition: all 0.3s ease;
+      }
+
+      .excellence-item:hover {
+        background: rgba(59, 130, 246, 0.1);
+        transform: translateY(-5px);
+      }
+
+      .excellence-item h4 {
+        color: #f1f5f9;
+        margin-bottom: 15px;
+        font-size: 1.3rem;
+        font-weight: 600;
+      }
+
+      .excellence-item ul {
+        list-style: none;
+        padding: 0;
+      }
+
+      .excellence-item li {
+        color: #cbd5e1;
+        margin: 8px 0;
+        padding-left: 20px;
+        position: relative;
+      }
+
+      .excellence-item li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #60a5fa;
+        font-weight: bold;
+      }
+
+      /* Footer */
+      .footer {
+        background: linear-gradient(
+          135deg,
+          rgba(15, 23, 42, 0.95),
+          rgba(30, 41, 59, 0.9)
+        );
+        color: #94a3b8;
+        text-align: center;
+        padding: 50px 60px;
+        font-size: 1rem;
+        border-top: 1px solid rgba(148, 163, 184, 0.1);
+        backdrop-filter: blur(20px);
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .header {
+          padding: 60px 30px;
+        }
+
+        .company-logo {
+          font-size: 3rem;
+        }
+
+        .tagline {
+          font-size: 1.2rem;
+        }
+
+        .download-btn {
+          position: static;
+          margin-top: 30px;
+          display: inline-block;
+        }
+
+        .section {
+          padding: 60px 30px;
+        }
+
+        .section-title {
+          font-size: 2.5rem;
+        }
+
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .mission-vision {
+          grid-template-columns: 1fr;
+        }
+
+        .features-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .portfolio-header {
+          flex-direction: column;
+          text-align: center;
+          padding: 40px 30px;
+        }
+
+        .portfolio-content {
+          padding: 40px 30px;
+        }
+
+        .tech-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* Scroll animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="content">
+      <!-- Header -->
+      <header class="header">
+        <button class="download-btn" onclick="downloadPDF()">
+          📄 Download PDF
+        </button>
+        <div class="header-content">
+          <h1 class="company-logo">Boundless Edge</h1>
+          <p class="tagline">
+            Digital Transformation Partners for Government & Enterprise
+            Solutions
+          </p>
+        </div>
+      </header>
+
+      <!-- About Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">About Us</h2>
+        <div class="about-grid">
+          <div class="about-text">
+            <p>
+              <strong>Boundless Edge</strong> is a premier software engineering
+              firm specializing in
+              <strong>large-scale digital transformation</strong> and
+              <strong>enterprise-grade solutions</strong> for government
+              institutions, corporations, and community organizations.
+              Originally conceived as "Limitless," our company embodies the
+              spirit of endless innovation and the relentless pursuit of
+              technological excellence.
+            </p>
+
+            <p>
+              We are a specialized team of senior software engineers, solution
+              architects, and digital transformation experts with proven
+              experience in delivering <strong>mission-critical</strong>,
+              <strong>scalable</strong>, and <strong>secure</strong> platforms
+              that serve thousands of users and manage significant financial
+              assets.
+            </p>
+          </div>
+          <div class="about-image">
+            <div class="about-image-content">
+              <div>
+                <h3>🏢 Enterprise Solutions</h3>
+                <p>
+                  Serving thousands of users with mission-critical platforms
+                </p>
+              </div>
+              <div>
+                <h3>🔒 Security First</h3>
+                <p>Bank-level security and compliance standards</p>
+              </div>
+              <div>
+                <h3>⚡ Rapid Deployment</h3>
+                <p>Agile methodology with defined timelines</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission/Vision Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">Our Foundation</h2>
+        <div class="mission-vision">
+          <div class="card">
+            <h3>🎯 Our Mission</h3>
+            <p>
+              To deliver enterprise-grade digital transformation solutions that
+              modernize government institutions and large organizations through
+              secure, scalable, and compliant technology platforms that drive
+              operational excellence and citizen engagement.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🌟 Our Vision</h3>
+            <p>
+              To be Nigeria's leading technology partner for government and
+              institutional digital transformation, setting the standard for
+              secure, compliant, and user-centric platforms that serve millions
+              of users.
+            </p>
+          </div>
+          <div class="card">
+            <h3>💎 Core Values</h3>
+            <ul style="list-style: none; padding: 0">
+              <li style="margin: 12px 0">🔐 Security First</li>
+              <li style="margin: 12px 0">🏛️ Institutional Excellence</li>
+              <li style="margin: 12px 0">📈 Scalable Architecture</li>
+              <li style="margin: 12px 0">✅ Compliance Ready</li>
+              <li style="margin: 12px 0">🎯 Results Driven</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">Our Portfolio</h2>
+
+        <!-- WastePro -->
+        <div class="portfolio-item">
+          <div class="portfolio-header">
+            <div class="portfolio-icon">🏢</div>
+            <div>
+              <div class="portfolio-title">
+                WastePro - Municipal Digital Transformation Platform
+              </div>
+              <div class="portfolio-subtitle">
+                Large-Scale Government Solution with Thousands of Users
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <p class="portfolio-description">
+              WastePro demonstrates our capability to deliver comprehensive
+              government-grade solutions. This end-to-end waste management
+              platform serves multiple municipalities with sophisticated user
+              management, automated billing, and real-time tracking
+              capabilities.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Multi-tenant architecture</strong> supporting
+                  thousands of concurrent users</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Role-based access control</strong> with comprehensive
+                  admin dashboards</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Automated workflow management</strong> reducing
+                  manual processes by 60%</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Real-time reporting and analytics</strong> for
+                  data-driven decision making</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>API-first architecture</strong> enabling seamless
+                  third-party integrations</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Cloud-hosted infrastructure</strong> ensuring 99.9%
+                  uptime and scalability</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Itesiwaju Alubarika -->
+        <div class="portfolio-item">
+          <div class="portfolio-header">
+            <div class="portfolio-icon">💰</div>
+            <div>
+              <div class="portfolio-title">
+                Itesiwaju Alubarika - Enterprise Financial Management System
+              </div>
+              <div class="portfolio-subtitle">
+                Secure Platform Managing Hundreds of Millions in Assets
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <p class="portfolio-description">
+              A mission-critical financial platform showcasing our expertise in
+              building secure, compliant systems for sensitive data and
+              high-value transactions. This cooperative management system
+              demonstrates our capability to handle complex financial workflows
+              and regulatory compliance.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Bank-level security</strong> with multi-factor
+                  authentication and encryption</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Compliance framework</strong> meeting Nigerian
+                  financial regulations</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Advanced user verification</strong> with BVN and NIN
+                  integrations</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Automated payment processing</strong> and
+                  reconciliation systems</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Comprehensive audit trails</strong> and transaction
+                  monitoring</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Scalable member management</strong> with
+                  communication tools</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Learning Management System -->
+        <div class="portfolio-item">
+          <div class="portfolio-header">
+            <div class="portfolio-icon">🎓</div>
+            <div>
+              <div class="portfolio-title">
+                Enterprise Learning Management Platform
+              </div>
+              <div class="portfolio-subtitle">
+                Scalable Educational Platform with International Standards
+              </div>
+            </div>
+          </div>
+          <div class="portfolio-content">
+            <p class="portfolio-description">
+              An enterprise-grade learning management system designed to serve
+              Nigeria's educational sector while maintaining global quality
+              standards. This platform showcases our ability to build complex
+              LMS solutions with integrated assessment and certification
+              capabilities.
+            </p>
+
+            <div class="features-grid">
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Integrated video conferencing</strong> (Zoom/Teams
+                  integration)</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Automated assessment and grading</strong>
+                  systems</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Progress tracking and analytics</strong> for learners
+                  and administrators</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Multi-role user management</strong> (students,
+                  instructors, administrators)</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Mobile-responsive design</strong> for accessibility
+                  across devices</span
+                >
+              </div>
+              <div class="feature-item">
+                <span class="feature-bullet">•</span>
+                <span
+                  ><strong>Scalable cloud infrastructure</strong> supporting
+                  concurrent users</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Technical Expertise Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">Our Technical Expertise</h2>
+        <div class="tech-grid">
+          <div class="tech-category">
+            <h4>🚀 Core Technology Stack</h4>
+            <ul class="tech-list">
+              <li>
+                <strong>Frontend:</strong> ReactJS, VueJS, NextJS, Tailwind CSS,
+                and more
+              </li>
+              <li>
+                <strong>Backend:</strong> Node.js, NestJS,
+                JavaScript/TypeScript, Python Django, and more
+              </li>
+              <li><strong>Database:</strong> MySQL, PostgreSQL with AWS RDS</li>
+              <li>
+                <strong>Cloud:</strong> AWS (EC2, S3, RDS), Azure deployment
+              </li>
+              <li>
+                <strong>APIs:</strong> RESTful APIs, microservices architecture
+              </li>
+              <li>
+                <strong>Security:</strong> MFA, encryption, WAF/DDoS protection
+              </li>
+            </ul>
+          </div>
+
+          <div class="tech-category">
+            <h4>🔧 Specialized Capabilities</h4>
+            <ul class="tech-list">
+              <li>
+                <strong>Integrations:</strong> Nigerian APIs (NIN, BVN, CAC,
+                NYSC) - seamless integration capabilities
+              </li>
+              <li><strong>Payments:</strong> Secure gateway integration</li>
+              <li>
+                <strong>Learning:</strong> Zoom/Teams integration, automation
+              </li>
+              <li>
+                <strong>Analytics:</strong> Predictive analytics, dashboards
+              </li>
+              <li>
+                <strong>User Management:</strong> RBAC, automated matching
+              </li>
+              <li>
+                <strong>Compliance:</strong> Audit logging, data protection
+              </li>
+            </ul>
+          </div>
+
+          <div class="tech-category">
+            <h4>⚡ Development Methodology</h4>
+            <ul class="tech-list">
+              <li><strong>Agile:</strong> Defined phases and deliverables</li>
+              <li><strong>Architecture:</strong> API-first, scalable design</li>
+              <li><strong>CI/CD:</strong> GitHub/GitLab integration</li>
+              <li><strong>Testing:</strong> Automated testing and UAT</li>
+              <li><strong>Design:</strong> Modular, future-ready</li>
+              <li><strong>Support:</strong> 6-month maintenance included</li>
+            </ul>
+          </div>
+
+          <div class="tech-category">
+            <h4>🏢 Industry Experience</h4>
+            <ul class="tech-list">
+              <li>
+                <strong>Government:</strong> Municipal systems, citizen services
+              </li>
+              <li><strong>FinTech:</strong> Payment processing, compliance</li>
+              <li><strong>EdTech:</strong> LMS platforms, certification</li>
+              <li>
+                <strong>Enterprise:</strong> Multi-tenant, workflow automation
+              </li>
+              <li>
+                <strong>Community:</strong> Member management, communication
+              </li>
+              <li><strong>Healthcare:</strong> Patient management systems</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- Government Excellence Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">
+          Government & Institutional Project Excellence
+        </h2>
+        <div class="gov-excellence">
+          <div class="excellence-grid">
+            <div class="excellence-item">
+              <h4>🏛️ Large-Scale Platform Experience</h4>
+              <ul>
+                <li>Platforms serving thousands of concurrent users</li>
+                <li>Managing hundreds of millions in assets</li>
+                <li>Enterprise-scale government solutions</li>
+                <li>Multi-tenant architecture expertise</li>
+              </ul>
+            </div>
+
+            <div class="excellence-item">
+              <h4>🔒 Security & Compliance Expertise</h4>
+              <ul>
+                <li>Multi-factor authentication protocols</li>
+                <li>Nigerian regulatory compliance (BVN, NIN, CAC)</li>
+                <li>Audit trails and data protection</li>
+                <li>Role-based access control</li>
+              </ul>
+            </div>
+
+            <div class="excellence-item">
+              <h4>⚡ Rapid Deployment Capability</h4>
+              <ul>
+                <li>2-3 weeks design, 6-8 weeks development</li>
+                <li>Agile methodology with quality deliverables</li>
+                <li>Comprehensive testing and UAT processes</li>
+                <li>6-month support and maintenance included</li>
+              </ul>
+            </div>
+
+            <div class="excellence-item">
+              <h4>🔧 Technical Architecture Excellence</h4>
+              <ul>
+                <li>API-first, modular design</li>
+                <li>Cloud-native solutions on AWS/Azure</li>
+                <li>Advanced analytics and reporting</li>
+                <li>Automated workflow management</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why Choose Us Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">Why Choose Boundless Edge?</h2>
+        <div class="mission-vision">
+          <div class="card">
+            <h3>🚀 Proven at Scale</h3>
+            <p>
+              Successfully delivered platforms managing
+              <strong>thousands of users</strong> and
+              <strong>hundreds of millions in assets</strong> - demonstrating
+              our capability for large-scale government solutions.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🏛️ Government-Ready Solutions</h3>
+            <p>
+              Deep experience with Nigerian regulatory requirements, security
+              standards, and the unique challenges of institutional digital
+              transformation.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🔧 Technical Excellence</h3>
+            <p>
+              Our modern technology stack (ReactJS, Node.js, AWS) directly
+              aligns with contemporary government platform requirements,
+              ensuring robust, scalable solutions with flexible integration
+              capabilities.
+            </p>
+          </div>
+          <div class="card">
+            <h3>🌍 Local Understanding, International Standards</h3>
+            <p>
+              Nigerian-based team with international-quality development
+              practices and compliance with global security standards.
+            </p>
+          </div>
+          <div class="card">
+            <h3>📈 End-to-End Delivery</h3>
+            <p>
+              From requirements analysis through 6-month post-deployment
+              support, we provide complete project lifecycle management with
+              defined milestones and deliverables.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section fade-in">
+        <h2 class="section-title">Contact Information</h2>
+        <div class="contact-section-intro">
+          <strong
+            >Ready to partner with us for your digital transformation
+            initiative?</strong
+          >
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-item">
+            <div class="contact-icon">📧</div>
+            <div>
+              <div class="contact-text">Project Inquiries & Proposals</div>
+              <div>service@boundlesedge.com</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">👨‍💻</div>
+            <div>
+              <div class="contact-text">Technical Development Services</div>
+              <div>dev@boundlesedge.com</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">📍</div>
+            <div>
+              <div class="contact-text">Corporate Office</div>
+              <div>
+                106 Hob and Hog Plaza, Shasha Road<br />Mosholashi Bus Stop,
+                Shasha, Lagos State
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="contact-icon">🌐</div>
+            <div>
+              <div class="contact-text">Digital Presence</div>
+              <div>boundlesedge.com</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top: 60px">
+          <h3>🤝 Partnership Commitment</h3>
+          <p>
+            At Boundless Edge, we understand that government and institutional
+            projects require:
+          </p>
+          <ul style="margin-top: 20px">
+            <li>
+              <strong>Rigorous project management</strong> with clear milestones
+              and accountability
+            </li>
+            <li>
+              <strong>Transparent communication</strong> throughout the
+              development lifecycle
+            </li>
+            <li>
+              <strong>Compliance with procurement standards</strong> and
+              regulatory requirements
+            </li>
+            <li>
+              <strong>Long-term partnership approach</strong> extending beyond
+              project delivery
+            </li>
+          </ul>
+          <p style="margin-top: 20px">
+            We are committed to delivering excellence in every aspect of your
+            digital transformation journey, from initial consultation through
+            ongoing support and enhancement.
+          </p>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="footer">
+        <p>
+          © 2024 Boundless Edge Technologies. Trusted partner for government and
+          enterprise digital transformation.
+        </p>
+      </footer>
+    </div>
+
+    <script>
+      // Scroll animation
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // PDF Download function
+      async function downloadPDF() {
+        const { jsPDF } = window.jspdf;
+        const content = document.getElementById('content');
+
+        // Temporarily hide the download button
+        const downloadBtn = document.querySelector('.download-btn');
+        downloadBtn.style.display = 'none';
+
+        try {
+          const canvas = await html2canvas(content, {
+            scale: 1,
+            useCORS: true,
+            allowTaint: true,
+            backgroundColor: '#0f172a',
+            height: content.scrollHeight,
+            width: content.scrollWidth,
+          });
+
+          const imgData = canvas.toDataURL('image/png');
+          const pdf = new jsPDF('p', 'mm', 'a4');
+
+          const imgWidth = 210;
+          const pageHeight = 295;
+          const imgHeight = (canvas.height * imgWidth) / canvas.width;
+          let heightLeft = imgHeight;
+          let position = 0;
+
+          pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+          heightLeft -= pageHeight;
+
+          while (heightLeft >= 0) {
+            position = heightLeft - imgHeight;
+            pdf.addPage();
+            pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+          }
+
+          pdf.save('Boundless-Edge-Company-Profile.pdf');
+        } catch (error) {
+          console.error('Error generating PDF:', error);
+          alert('Error generating PDF. Please try again.');
+        } finally {
+          // Show the download button again
+          downloadBtn.style.display = 'block';
+        }
+      }
+    </script>
+  </body>
+</html>

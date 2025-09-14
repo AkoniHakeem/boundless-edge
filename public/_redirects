@@ -1,0 +1,10 @@
+# Netlify redirects for SPA
+/*    /index.html   200
+
+# Custom domain redirects
+# Redirect www to non-www
+https://www.boundlesedge.com/*  https://boundlesedge.com/:splat  301!
+
+# Redirect HTTP to HTTPS
+http://boundlesedge.com/*  https://boundlesedge.com/:splat  301!
+http://www.boundlesedge.com/*  https://boundlesedge.com/:splat  301!

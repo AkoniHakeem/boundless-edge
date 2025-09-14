@@ -1,0 +1,33 @@
+BOUNDLESS EDGE - NEW CONTACT FORM SUBMISSION
+=============================================
+
+Hello Boundless Edge Team!
+
+You have received a new contact form submission from your website.
+
+CONTACT DETAILS:
+---------------
+Name: {{from_name}}
+Email: {{from_email}}
+Company: {{company}}
+Project Type: {{project_type}}
+Submitted: {{submission_date}}
+
+PROJECT DETAILS:
+----------------
+{{message}}
+
+NEXT STEPS:
+----------
+1. Review the project details above
+2. Reply directly to: {{from_email}}
+3. Schedule a consultation if needed
+4. Update your CRM with this new lead
+
+---
+Boundless Edge Contact System
+Email: dev@boundlesedge.com
+Phone: +234 701 163 0342
+
+This email was automatically generated from your website contact form.
+© 2025 Boundless Edge. All rights reserved.

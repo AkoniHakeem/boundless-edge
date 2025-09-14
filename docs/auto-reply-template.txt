@@ -1,0 +1,47 @@
+BOUNDLESS EDGE - THANK YOU FOR YOUR INQUIRY
+==========================================
+
+Hello {{from_name}}!
+
+Thank you for reaching out to Boundless Edge! We've successfully received your inquiry about your {{project_type}} project, and we're excited to learn more about your vision.
+
+✅ YOUR MESSAGE HAS BEEN RECEIVED
+Reference ID: #{{submission_date}}
+
+YOUR INQUIRY SUMMARY:
+--------------------
+Name: {{from_name}}
+Email: {{from_email}}
+Company: {{company}}
+Project Type: {{project_type}}
+Submitted: {{submission_date}}
+
+🚀 WHAT HAPPENS NEXT?
+--------------------
+1. Our team will review your project details within the next few hours
+2. We'll prepare a personalized response with initial thoughts and questions
+3. You'll receive a detailed email with next steps and scheduling options
+4. We'll schedule a consultation call to discuss your project in depth
+
+⏰ EXPECTED RESPONSE TIME
+------------------------
+Within 24 hours during business days
+Urgent inquiries are typically handled within 4-6 hours
+
+NEED IMMEDIATE ASSISTANCE?
+-------------------------
+📧 Email: dev@boundlesedge.com
+📞 Phone: +234 701 163 0342
+
+In the meantime, feel free to browse our portfolio and case studies on our website. We're looking forward to discussing how we can bring your vision to life!
+
+---
+BOUNDLESS EDGE
+Transforming Ideas into Reality
+
+Website: [Your Website URL]
+Email: dev@boundlesedge.com
+Phone: +234 701 163 0342
+
+© 2025 Boundless Edge. All rights reserved.
+This is an automated confirmation email.

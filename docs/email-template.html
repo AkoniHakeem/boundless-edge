@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Contact Form Submission - Boundless Edge</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:AllowPNG />
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Base styles */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333333;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Container */
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header */
+      .email-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 30px 40px;
+        text-align: center;
+        color: white;
+      }
+
+      .logo {
+        font-size: 28px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        letter-spacing: -0.5px;
+      }
+
+      .header-subtitle {
+        font-size: 16px;
+        opacity: 0.9;
+        font-weight: 400;
+      }
+
+      /* Content */
+      .email-content {
+        padding: 40px;
+      }
+
+      .greeting {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 20px;
+      }
+
+      .intro-text {
+        font-size: 16px;
+        color: #4a5568;
+        margin-bottom: 30px;
+        line-height: 1.6;
+      }
+
+      /* Contact Details Card */
+      .contact-details {
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+        border-left: 4px solid #667eea;
+      }
+
+      .detail-row {
+        display: flex;
+        margin-bottom: 15px;
+        align-items: flex-start;
+      }
+
+      .detail-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .detail-label {
+        font-weight: 600;
+        color: #2d3748;
+        width: 120px;
+        flex-shrink: 0;
+        font-size: 14px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .detail-value {
+        color: #4a5568;
+        font-size: 16px;
+        flex: 1;
+        word-break: break-word;
+      }
+
+      .detail-value.email {
+        color: #667eea;
+        text-decoration: none;
+      }
+
+      /* Message Section */
+      .message-section {
+        margin: 30px 0;
+      }
+
+      .message-label {
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 15px;
+        font-size: 16px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .message-content {
+        background: #ffffff;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 20px;
+        color: #4a5568;
+        font-size: 16px;
+        line-height: 1.6;
+        white-space: pre-wrap;
+        word-wrap: break-word;
+      }
+
+      /* Action Button */
+      .action-section {
+        text-align: center;
+        margin: 40px 0 30px 0;
+      }
+
+      .reply-button {
+        display: inline-block;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        color: white;
+        text-decoration: none;
+        padding: 15px 30px;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        letter-spacing: 0.5px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      /* Footer */
+      .email-footer {
+        background: #2d3748;
+        color: white;
+        padding: 30px 40px;
+        text-align: center;
+      }
+
+      .footer-logo {
+        font-size: 20px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .footer-text {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+      }
+
+      .footer-links {
+        margin-bottom: 20px;
+      }
+
+      .footer-links a {
+        color: #81e6d9;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 14px;
+      }
+
+      .footer-contact {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      /* Priority Badge */
+      .priority-badge {
+        display: inline-block;
+        background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        color: white;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-left: 10px;
+      }
+
+      /* Responsive Design */
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          margin: 0;
+          border-radius: 0;
+        }
+
+        .email-header,
+        .email-content,
+        .email-footer {
+          padding: 30px 20px;
+        }
+
+        .contact-details {
+          padding: 20px;
+        }
+
+        .detail-row {
+          flex-direction: column;
+          margin-bottom: 20px;
+        }
+
+        .detail-label {
+          width: auto;
+          margin-bottom: 5px;
+        }
+
+        .logo {
+          font-size: 24px;
+        }
+
+        .greeting {
+          font-size: 16px;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .email-container {
+          background-color: #1a202c;
+        }
+
+        .email-content {
+          color: #e2e8f0;
+        }
+
+        .greeting {
+          color: #f7fafc;
+        }
+
+        .intro-text,
+        .detail-value {
+          color: #cbd5e0;
+        }
+
+        .contact-details {
+          background: linear-gradient(135deg, #2d3748 0%, #4a5568 100%);
+        }
+
+        .message-content {
+          background: #2d3748;
+          border-color: #4a5568;
+          color: #e2e8f0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header -->
+      <div class="email-header">
+        <div class="logo">Boundless Edge</div>
+        <div class="header-subtitle">New Contact Form Submission</div>
+      </div>
+
+      <!-- Content -->
+      <div class="email-content">
+        <div class="greeting">
+          Hello Boundless Edge Team! 👋
+          <span class="priority-badge">New Lead</span>
+        </div>
+
+        <div class="intro-text">
+          You have received a new contact form submission from your website.
+          Here are the details:
+        </div>
+
+        <!-- Contact Details -->
+        <div class="contact-details">
+          <div class="detail-row">
+            <div class="detail-label">Name:</div>
+            <div class="detail-value">{{from_name}}</div>
+          </div>
+
+          <div class="detail-row">
+            <div class="detail-label">Email:</div>
+            <div class="detail-value email">{{from_email}}</div>
+          </div>
+
+          <div class="detail-row">
+            <div class="detail-label">Company:</div>
+            <div class="detail-value">{{company}}</div>
+          </div>
+
+          <div class="detail-row">
+            <div class="detail-label">Project Type:</div>
+            <div class="detail-value">{{project_type}}</div>
+          </div>
+
+          <div class="detail-row">
+            <div class="detail-label">Submitted:</div>
+            <div class="detail-value">{{submission_date}}</div>
+          </div>
+        </div>
+
+        <!-- Message Section -->
+        <div class="message-section">
+          <div class="message-label">Project Details:</div>
+          <div class="message-content">{{message}}</div>
+        </div>
+
+        <!-- Action Button -->
+        <div class="action-section">
+          <a
+            href="mailto:{{from_email}}?subject=Re: Your Project Inquiry - Boundless Edge&body=Hi {{from_name}},%0D%0A%0D%0AThank you for reaching out to Boundless Edge regarding your {{project_type}} project.%0D%0A%0D%0A"
+            class="reply-button"
+          >
+            Reply to {{from_name}}
+          </a>
+        </div>
+
+        <div
+          class="intro-text"
+          style="
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+          "
+        >
+          <strong>Next Steps:</strong><br />
+          • Review the project details above<br />
+          • Click the reply button to respond directly<br />
+          • Schedule a consultation if needed<br />
+          • Update your CRM with this new lead
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        <div class="footer-logo">Boundless Edge</div>
+        <div class="footer-text">
+          This email was automatically generated from your website contact form.
+        </div>
+        <div class="footer-links">
+          <a href="mailto:dev@boundlesedge.com">dev@boundlesedge.com</a>
+          <a href="tel:+2347011630342">+234 701 163 0342</a>
+        </div>
+        <div class="footer-contact">
+          © 2025 Boundless Edge. All rights reserved.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

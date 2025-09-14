@@ -1,21 +1,163 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title><%= productName %></title>
 
-    <meta charset="utf-8">
-    <meta name="description" content="<%= productDescription %>">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="msapplication-tap-highlight" content="no">
-    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>">
+    <meta charset="utf-8" />
+    <meta name="description" content="<%= productDescription %>" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="msapplication-tap-highlight" content="no" />
+    <meta
+      name="viewport"
+      content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width<% if (ctx.mode.cordova || ctx.mode.capacitor) { %>, viewport-fit=cover<% } %>"
+    />
 
-    <link rel="icon" type="image/png" sizes="128x128" href="icons/favicon-128x128.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="icons/favicon-16x16.png">
-    <link rel="icon" type="image/ico" href="favicon.ico">
+    <!-- SEO Meta Tags -->
+    <meta
+      name="keywords"
+      content="web development, mobile app development, cloud solutions, digital transformation, software development, Lagos Nigeria, React, Vue.js, Node.js, AWS, business solutions"
+    />
+    <meta name="author" content="Boundless Edge Limited" />
+    <meta name="robots" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="revisit-after" content="7 days" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://boundlessedge.com/" />
+    <meta
+      property="og:title"
+      content="<%= productName %> - Transforming Ideas into Reality"
+    />
+    <meta property="og:description" content="<%= productDescription %>" />
+    <meta property="og:image" content="/images/Boundless_Edge_-Logo-nobg.png" />
+    <meta property="og:site_name" content="Boundless Edge" />
+    <meta property="og:locale" content="en_US" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://boundlessedge.com/" />
+    <meta
+      property="twitter:title"
+      content="<%= productName %> - Transforming Ideas into Reality"
+    />
+    <meta property="twitter:description" content="<%= productDescription %>" />
+    <meta
+      property="twitter:image"
+      content="/images/Boundless_Edge_-Logo-nobg.png"
+    />
+
+    <!-- LinkedIn -->
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+
+    <!-- Business Information -->
+    <meta name="geo.region" content="NG-LA" />
+    <meta name="geo.placename" content="Lagos" />
+    <meta name="geo.position" content="6.5244;3.3792" />
+    <meta name="ICBM" content="6.5244, 3.3792" />
+
+    <!-- Contact Information -->
+    <meta name="contact" content="dev@boundlesedge.com" />
+    <meta name="phone" content="+2347011630342" />
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://boundlessedge.com/" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json" />
+
+    <!-- Favicons -->
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="128x128"
+      href="icons/favicon-128x128.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="96x96"
+      href="icons/favicon-96x96.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="icons/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="icons/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "Boundless Edge Limited",
+        "alternateName": "Boundless Edge",
+        "url": "https://boundlessedge.com",
+        "logo": "https://boundlessedge.com/images/Boundless_Edge_-Logo-nobg.png",
+        "description": "Professional web development, mobile app development, cloud solutions, and digital transformation services in Lagos, Nigeria.",
+        "foundingDate": "2024",
+        "founder": {
+          "@type": "Person",
+          "name": "Akoni Mayowa"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "106 Hob and Hog Plaza, Shasha Road",
+          "addressLocality": "Lagos",
+          "addressRegion": "Lagos State",
+          "addressCountry": "Nigeria"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+2347011630342",
+          "email": "dev@boundlesedge.com",
+          "contactType": "customer service",
+          "availableLanguage": "English"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/boundless-edge",
+          "https://twitter.com/boundlessedge"
+        ],
+        "services": [
+          "Web Development",
+          "Mobile App Development",
+          "Cloud Solutions",
+          "Digital Transformation",
+          "Software Consulting"
+        ],
+        "areaServed": {
+          "@type": "Country",
+          "name": "Nigeria"
+        }
+      }
+    </script>
   </head>
+
   <body>
+    <!-- noscript is added to index.html since it can't be managed from a vue file -->
+    <noscript>
+      <strong
+        >We're sorry but <%= productName %> doesn't work properly without
+        JavaScript enabled. Please enable it to continue.</strong
+      >
+    </noscript>
     <!-- quasar:entry-point -->
   </body>
 </html>

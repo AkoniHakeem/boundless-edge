@@ -1,0 +1,1507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Boundless Edge - Transforming Ideas into Reality</title>
+    <meta
+      name="description"
+      content="Boundless Edge - Custom software development and digital transformation solutions for businesses of all sizes. We transform your ideas into powerful digital reality."
+    />
+    <meta
+      name="keywords"
+      content="software development, web development, mobile apps, digital transformation, custom software, technology solutions"
+    />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        --secondary-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        --blue-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        --purple-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+        --dark-gradient: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 100%);
+        --text-primary: #2d3748;
+        --text-secondary: #4a5568;
+        --text-light: #718096;
+        --white: #ffffff;
+        --gray-50: #f7fafc;
+        --gray-100: #edf2f7;
+        --gray-200: #e2e8f0;
+      }
+
+      body {
+        font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+        line-height: 1.6;
+        color: var(--text-primary);
+        background: var(--white);
+        overflow-x: hidden;
+      }
+
+      /* Smooth scrolling */
+      html {
+        scroll-behavior: smooth;
+      }
+
+      /* Header & Navigation */
+      .header {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transition: all 0.3s ease;
+      }
+
+      .nav {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .nav-links {
+        display: flex;
+        list-style: none;
+        gap: 2rem;
+        align-items: center;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-primary);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        position: relative;
+      }
+
+      .nav-links a:hover {
+        color: #667eea;
+      }
+
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+        width: 0;
+        height: 2px;
+        background: var(--primary-gradient);
+        transition: width 0.3s ease;
+      }
+
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .cta-button {
+        background: var(--primary-gradient);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      }
+
+      .cta-button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 8px 25px rgba(102, 126, 234, 0.4);
+      }
+
+      /* Mobile menu toggle */
+      .mobile-menu-toggle {
+        display: none;
+        flex-direction: column;
+        cursor: pointer;
+        gap: 4px;
+      }
+
+      .mobile-menu-toggle span {
+        width: 25px;
+        height: 3px;
+        background: var(--text-primary);
+        transition: all 0.3s ease;
+      }
+
+      /* Hero Section */
+      .hero {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="g"><stop offset="0%" stop-color="rgba(255,255,255,0.1)"/><stop offset="100%" stop-color="transparent"/></radialGradient></defs><circle cx="200" cy="200" r="300" fill="url(%23g)"/><circle cx="800" cy="600" r="250" fill="url(%23g)"/><circle cx="600" cy="300" r="200" fill="url(%23g)"/></svg>')
+          no-repeat center;
+        background-size: cover;
+        pointer-events: none;
+      }
+
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero h1 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        color: white;
+        margin-bottom: 1.5rem;
+        line-height: 1.1;
+        text-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      }
+
+      .hero .tagline {
+        font-size: clamp(1.2rem, 4vw, 2rem);
+        color: rgba(255, 255, 255, 0.9);
+        margin-bottom: 2rem;
+        font-weight: 300;
+        text-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: 4rem;
+      }
+
+      .btn-primary {
+        background: rgba(255, 255, 255, 0.2);
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(20px);
+        border: 2px solid rgba(255, 255, 255, 0.3);
+      }
+
+      .btn-primary:hover {
+        background: rgba(255, 255, 255, 0.3);
+        transform: translateY(-3px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        padding: 1rem 2rem;
+        border-radius: 50px;
+        text-decoration: none;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        transform: translateY(-3px);
+      }
+
+      /* Floating elements */
+      .floating-elements {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+        overflow: hidden;
+      }
+
+      .floating-element {
+        position: absolute;
+        background: rgba(255, 255, 255, 0.1);
+        border-radius: 50%;
+        animation: float 20s infinite linear;
+      }
+
+      .floating-element:nth-child(1) {
+        width: 80px;
+        height: 80px;
+        top: 20%;
+        left: 10%;
+        animation-delay: 0s;
+      }
+
+      .floating-element:nth-child(2) {
+        width: 120px;
+        height: 120px;
+        top: 60%;
+        right: 15%;
+        animation-delay: -5s;
+      }
+
+      .floating-element:nth-child(3) {
+        width: 60px;
+        height: 60px;
+        bottom: 30%;
+        left: 20%;
+        animation-delay: -10s;
+      }
+
+      @keyframes float {
+        from {
+          transform: translateY(0px) rotate(0deg);
+        }
+        to {
+          transform: translateY(-20px) rotate(360deg);
+        }
+      }
+
+      /* Sections */
+      .section {
+        padding: 6rem 2rem;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .section-title {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: 3rem;
+        position: relative;
+      }
+
+      .section-title.gradient {
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .section-subtitle {
+        font-size: 1.2rem;
+        color: var(--text-secondary);
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 4rem;
+        line-height: 1.8;
+      }
+
+      /* Services Grid */
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .service-card {
+        background: white;
+        border-radius: 20px;
+        padding: 2.5rem;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--gray-200);
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: var(--primary-gradient);
+      }
+
+      .service-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .service-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 15px;
+        background: var(--primary-gradient);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-card h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .service-card p {
+        color: var(--text-secondary);
+        line-height: 1.7;
+        margin-bottom: 1.5rem;
+      }
+
+      .service-features {
+        list-style: none;
+      }
+
+      .service-features li {
+        color: var(--text-light);
+        margin: 0.5rem 0;
+        padding-left: 1.5rem;
+        position: relative;
+      }
+
+      .service-features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #667eea;
+        font-weight: bold;
+      }
+
+      /* About Section */
+      .about-section {
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      }
+
+      .about-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .about-content h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .about-content p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: var(--text-secondary);
+        margin-bottom: 1.5rem;
+      }
+
+      .stats-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        margin-top: 2rem;
+      }
+
+      .stat-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+      }
+
+      .stat-number {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        background: var(--primary-gradient);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        display: block;
+      }
+
+      .stat-label {
+        color: var(--text-secondary);
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      .about-image {
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+      }
+
+      .about-image::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: var(--primary-gradient);
+        opacity: 0.8;
+        z-index: 1;
+      }
+
+      .about-image-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: white;
+        z-index: 2;
+      }
+
+      .about-image-content h3 {
+        font-size: 1.5rem;
+        margin-bottom: 0.5rem;
+      }
+
+      /* Portfolio Section */
+      .portfolio-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+        gap: 2rem;
+        margin-top: 4rem;
+      }
+
+      .portfolio-card {
+        background: white;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+        transition: all 0.3s ease;
+      }
+
+      .portfolio-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+      }
+
+      .portfolio-image {
+        height: 200px;
+        background: var(--blue-gradient);
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .portfolio-image .icon {
+        font-size: 3rem;
+        color: white;
+      }
+
+      .portfolio-content {
+        padding: 2rem;
+      }
+
+      .portfolio-content h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+      }
+
+      .portfolio-content p {
+        color: var(--text-secondary);
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+      }
+
+      .tech-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+      }
+
+      .tech-tag {
+        background: var(--gray-100);
+        color: var(--text-secondary);
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        background: var(--dark-gradient);
+        color: white;
+        padding: 6rem 2rem;
+      }
+
+      .contact-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: start;
+      }
+
+      .contact-info h2 {
+        font-family: 'Space Grotesk', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 1.5rem;
+        color: white;
+      }
+
+      .contact-info p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, 0.8);
+        margin-bottom: 2rem;
+      }
+
+      .contact-methods {
+        list-style: none;
+      }
+
+      .contact-methods li {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin: 1.5rem 0;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .contact-methods .icon {
+        width: 24px;
+        text-align: center;
+      }
+
+      .contact-form {
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        border-radius: 20px;
+        padding: 2.5rem;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+      }
+
+      .form-group {
+        margin-bottom: 1.5rem;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 500;
+      }
+
+      .form-group input,
+      .form-group textarea,
+      .form-group select {
+        width: 100%;
+        padding: 1rem;
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 1rem;
+        backdrop-filter: blur(10px);
+      }
+
+      .form-group input::placeholder,
+      .form-group textarea::placeholder {
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus,
+      .form-group select:focus {
+        outline: none;
+        border-color: rgba(255, 255, 255, 0.6);
+        box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1);
+      }
+
+      .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+      }
+
+      .form-group select option {
+        background: #1a1a2e;
+        color: white;
+      }
+
+      .submit-btn {
+        background: var(--primary-gradient);
+        color: white;
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 50px;
+        font-size: 1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        width: 100%;
+      }
+
+      .submit-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+      }
+
+      /* Footer */
+      .footer {
+        background: #0c0c0c;
+        color: rgba(255, 255, 255, 0.8);
+        padding: 3rem 2rem 2rem;
+      }
+
+      .footer-container {
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 2rem;
+        margin-bottom: 2rem;
+      }
+
+      .footer-section h3 {
+        font-family: 'Space Grotesk', sans-serif;
+        color: white;
+        margin-bottom: 1rem;
+        font-weight: 600;
+      }
+
+      .footer-section ul {
+        list-style: none;
+      }
+
+      .footer-section ul li {
+        margin: 0.5rem 0;
+      }
+
+      .footer-section ul li a {
+        color: rgba(255, 255, 255, 0.7);
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+
+      .footer-section ul li a:hover {
+        color: #667eea;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.6);
+      }
+
+      /* Animations */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+      }
+
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      /* Mobile Responsive */
+      @media (max-width: 768px) {
+        .nav-links {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: rgba(255, 255, 255, 0.98);
+          flex-direction: column;
+          padding: 2rem;
+          box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links.active {
+          display: flex;
+        }
+
+        .mobile-menu-toggle {
+          display: flex;
+        }
+
+        .about-grid,
+        .contact-grid {
+          grid-template-columns: 1fr;
+          gap: 2rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-buttons {
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .btn-primary,
+        .btn-secondary {
+          width: 100%;
+          max-width: 300px;
+        }
+
+        .section {
+          padding: 4rem 1rem;
+        }
+
+        .contact-section {
+          padding: 4rem 1rem;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .services-grid,
+        .portfolio-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .footer-grid {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header class="header">
+      <nav class="nav">
+        <div class="logo">Boundless Edge</div>
+        <ul class="nav-links">
+          <li><a href="#home">Home</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="cta-button">Get Started</a>
+        <div class="mobile-menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+      <div class="floating-elements">
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+        <div class="floating-element"></div>
+      </div>
+      <div class="hero-content">
+        <h1>Boundless Edge</h1>
+        <p class="tagline">Transforming Ideas into Reality</p>
+        <div class="hero-buttons">
+          <a href="#portfolio" class="btn-primary">View Our Work</a>
+          <a href="#contact" class="btn-secondary">Start Your Project</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="section" id="services">
+      <h2 class="section-title gradient">Our Services</h2>
+      <p class="section-subtitle">
+        We provide comprehensive digital solutions to help your business thrive
+        in the modern world. From custom software development to digital
+        transformation, we've got you covered.
+      </p>
+
+      <div class="services-grid fade-in">
+        <div class="service-card">
+          <div class="service-icon">🚀</div>
+          <h3>Custom Software Development</h3>
+          <p>
+            Tailored software solutions designed specifically for your business
+            needs and goals.
+          </p>
+          <ul class="service-features">
+            <li>Web Applications</li>
+            <li>Mobile Apps (iOS & Android)</li>
+            <li>Desktop Applications</li>
+            <li>API Development</li>
+            <li>Database Design</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🌐</div>
+          <h3>Web Development</h3>
+          <p>
+            Modern, responsive websites that deliver exceptional user
+            experiences across all devices.
+          </p>
+          <ul class="service-features">
+            <li>Responsive Design</li>
+            <li>E-commerce Solutions</li>
+            <li>Content Management Systems</li>
+            <li>SEO Optimization</li>
+            <li>Performance Optimization</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">📱</div>
+          <h3>Mobile App Development</h3>
+          <p>
+            Native and cross-platform mobile applications that engage users and
+            drive business growth.
+          </p>
+          <ul class="service-features">
+            <li>iOS & Android Apps</li>
+            <li>Cross-platform Development</li>
+            <li>UI/UX Design</li>
+            <li>App Store Optimization</li>
+            <li>Maintenance & Support</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">☁️</div>
+          <h3>Cloud Solutions</h3>
+          <p>
+            Scalable cloud infrastructure and services to modernize your
+            business operations.
+          </p>
+          <ul class="service-features">
+            <li>Cloud Migration</li>
+            <li>AWS & Azure Services</li>
+            <li>DevOps Implementation</li>
+            <li>Backup & Security</li>
+            <li>24/7 Monitoring</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎨</div>
+          <h3>UI/UX Design</h3>
+          <p>
+            Beautiful, intuitive designs that create meaningful connections
+            between your brand and users.
+          </p>
+          <ul class="service-features">
+            <li>User Research</li>
+            <li>Wireframing & Prototyping</li>
+            <li>Visual Design</li>
+            <li>Usability Testing</li>
+            <li>Brand Identity</li>
+          </ul>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Digital Transformation</h3>
+          <p>
+            Complete digital transformation solutions to modernize your business
+            processes and workflows.
+          </p>
+          <ul class="service-features">
+            <li>Process Automation</li>
+            <li>System Integration</li>
+            <li>Data Analytics</li>
+            <li>Digital Strategy</li>
+            <li>Change Management</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section section" id="about">
+      <div class="about-grid fade-in">
+        <div class="about-content">
+          <h2>Innovating the Future of Technology</h2>
+          <p>
+            At Boundless Edge, we're passionate about turning innovative ideas
+            into powerful digital solutions. Our team of experienced developers,
+            designers, and strategists work collaboratively to deliver
+            exceptional results that drive business growth.
+          </p>
+          <p>
+            With expertise spanning multiple industries and technologies, we
+            provide end-to-end solutions that not only meet your current needs
+            but scale with your future ambitions.
+          </p>
+
+          <div class="stats-grid">
+            <div class="stat-item">
+              <span class="stat-number">50+</span>
+              <span class="stat-label">Projects Completed</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">100%</span>
+              <span class="stat-label">Client Satisfaction</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">24/7</span>
+              <span class="stat-label">Support Available</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">5+</span>
+              <span class="stat-label">Years Experience</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-image">
+          <img
+            src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80"
+            alt="Team collaboration"
+          />
+          <div class="about-image-content">
+            <h3>Expert Team</h3>
+            <p>Dedicated professionals committed to your success</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+      <h2 class="section-title gradient">Our Portfolio</h2>
+      <p class="section-subtitle">
+        Explore some of our recent projects and see how we've helped businesses
+        achieve their digital transformation goals.
+      </p>
+
+      <div class="portfolio-grid fade-in">
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <span class="icon">🏢</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Municipal Management Platform</h3>
+            <p>
+              Comprehensive waste management system serving multiple
+              municipalities with automated billing and real-time tracking
+              capabilities.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Node.js</span>
+              <span class="tech-tag">AWS</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <span class="icon">💰</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Financial Management System</h3>
+            <p>
+              Secure cooperative management platform handling financial
+              transactions with advanced user verification and compliance
+              features.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Vue.js</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">Django</span>
+              <span class="tech-tag">MySQL</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <span class="icon">🎓</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Learning Management System</h3>
+            <p>
+              Enterprise-grade educational platform with integrated video
+              conferencing, automated assessments, and progress tracking.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Next.js</span>
+              <span class="tech-tag">TypeScript</span>
+              <span class="tech-tag">MongoDB</span>
+              <span class="tech-tag">WebRTC</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <span class="icon">🛒</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>E-commerce Platform</h3>
+            <p>
+              Modern online marketplace with advanced search, payment
+              integration, and inventory management for growing businesses.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">React</span>
+              <span class="tech-tag">Express</span>
+              <span class="tech-tag">Stripe</span>
+              <span class="tech-tag">Redis</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <span class="icon">📊</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Analytics Dashboard</h3>
+            <p>
+              Real-time business intelligence platform providing actionable
+              insights through interactive visualizations and reporting.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">Angular</span>
+              <span class="tech-tag">D3.js</span>
+              <span class="tech-tag">Python</span>
+              <span class="tech-tag">FastAPI</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio-card">
+          <div class="portfolio-image">
+            <span class="icon">📱</span>
+          </div>
+          <div class="portfolio-content">
+            <h3>Mobile Banking App</h3>
+            <p>
+              Secure mobile banking solution with biometric authentication,
+              transaction history, and seamless money transfer capabilities.
+            </p>
+            <div class="tech-tags">
+              <span class="tech-tag">React Native</span>
+              <span class="tech-tag">Firebase</span>
+              <span class="tech-tag">Biometrics</span>
+              <span class="tech-tag">Encryption</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+      <div class="contact-container">
+        <div class="contact-grid">
+          <div class="contact-info fade-in">
+            <h2>Let's Build Something Amazing Together</h2>
+            <p>
+              Ready to transform your ideas into reality? We're here to help you
+              navigate the digital landscape and create solutions that drive
+              real results for your business.
+            </p>
+
+            <ul class="contact-methods">
+              <li>
+                <span class="icon">📧</span>
+                <div>
+                  <strong>Email Us</strong><br />
+                  hello@boundlessedge.com
+                </div>
+              </li>
+              <li>
+                <span class="icon">📞</span>
+                <div>
+                  <strong>Call Us</strong><br />
+                  +234 (0) 123 456 7890
+                </div>
+              </li>
+              <li>
+                <span class="icon">📍</span>
+                <div>
+                  <strong>Visit Us</strong><br />
+                  106 Hob and Hog Plaza, Shasha Road<br />
+                  Lagos State, Nigeria
+                </div>
+              </li>
+              <li>
+                <span class="icon">⏰</span>
+                <div>
+                  <strong>Business Hours</strong><br />
+                  Monday - Friday: 9:00 AM - 6:00 PM
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <form class="contact-form fade-in" netlify>
+            <div class="form-group">
+              <label for="name">Full Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="company">Company</label>
+              <input
+                type="text"
+                id="company"
+                name="company"
+                placeholder="Enter your company name"
+              />
+            </div>
+
+            <div class="form-group">
+              <label for="project">Project Type</label>
+              <select id="project" name="project">
+                <option value="">Select project type</option>
+                <option value="web-development">Web Development</option>
+                <option value="mobile-app">Mobile App Development</option>
+                <option value="custom-software">Custom Software</option>
+                <option value="ui-ux-design">UI/UX Design</option>
+                <option value="digital-transformation">
+                  Digital Transformation
+                </option>
+                <option value="consulting">Consulting</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Project Details</label>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Tell us about your project..."
+                required
+              ></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <h3>Boundless Edge</h3>
+            <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6">
+              Transforming ideas into reality through innovative digital
+              solutions. We help businesses of all sizes achieve their
+              technology goals.
+            </p>
+          </div>
+
+          <div class="footer-section">
+            <h3>Services</h3>
+            <ul>
+              <li><a href="#services">Custom Software Development</a></li>
+              <li><a href="#services">Web Development</a></li>
+              <li><a href="#services">Mobile App Development</a></li>
+              <li><a href="#services">UI/UX Design</a></li>
+              <li><a href="#services">Cloud Solutions</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Company</h3>
+            <ul>
+              <li><a href="#about">About Us</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li><a href="#careers">Careers</a></li>
+              <li><a href="#blog">Blog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-section">
+            <h3>Connect</h3>
+            <ul>
+              <li><a href="#linkedin">LinkedIn</a></li>
+              <li><a href="#twitter">Twitter</a></li>
+              <li><a href="#github">GitHub</a></li>
+              <li><a href="#dribbble">Dribbble</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; 2025 Boundless Edge Limited. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const headerHeight = document.querySelector('.header').offsetHeight;
+            const targetPosition = target.offsetTop - headerHeight;
+
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth',
+            });
+          }
+        });
+      });
+
+      // Header background on scroll
+      window.addEventListener('scroll', () => {
+        const header = document.querySelector('.header');
+        if (window.scrollY > 100) {
+          header.style.background = 'rgba(255, 255, 255, 0.98)';
+          header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+        } else {
+          header.style.background = 'rgba(255, 255, 255, 0.95)';
+          header.style.boxShadow = 'none';
+        }
+      });
+
+      // Intersection Observer for fade-in animations
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px',
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      document.querySelectorAll('.fade-in').forEach((el) => {
+        observer.observe(el);
+      });
+
+      // Mobile menu toggle
+      const mobileMenuToggle = document.querySelector('.mobile-menu-toggle');
+      const navLinks = document.querySelector('.nav-links');
+
+      mobileMenuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+
+        // Animate hamburger menu
+        const spans = mobileMenuToggle.querySelectorAll('span');
+        mobileMenuToggle.classList.toggle('active');
+
+        if (mobileMenuToggle.classList.contains('active')) {
+          spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+          spans[1].style.opacity = '0';
+          spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+        } else {
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = '';
+        }
+      });
+
+      // Close mobile menu when clicking a link
+      document.querySelectorAll('.nav-links a').forEach((link) => {
+        link.addEventListener('click', () => {
+          navLinks.classList.remove('active');
+          mobileMenuToggle.classList.remove('active');
+
+          const spans = mobileMenuToggle.querySelectorAll('span');
+          spans[0].style.transform = '';
+          spans[1].style.opacity = '1';
+          spans[2].style.transform = '';
+        });
+      });
+
+      // Form submission handling
+      document
+        .querySelector('.contact-form')
+        .addEventListener('submit', function (e) {
+          e.preventDefault();
+
+          const submitBtn = this.querySelector('.submit-btn');
+          const originalText = submitBtn.textContent;
+
+          submitBtn.textContent = 'Sending...';
+          submitBtn.disabled = true;
+
+          // Simulate form submission (Netlify will handle the actual submission)
+          setTimeout(() => {
+            submitBtn.textContent = 'Message Sent!';
+            setTimeout(() => {
+              submitBtn.textContent = originalText;
+              submitBtn.disabled = false;
+              this.reset();
+            }, 2000);
+          }, 1000);
+        });
+
+      // Add dynamic typing effect to hero
+      const heroTitle = document.querySelector('.hero h1');
+      const originalText = heroTitle.textContent;
+
+      function typeWriter(text, element, speed = 100) {
+        element.textContent = '';
+        let i = 0;
+        const timer = setInterval(() => {
+          if (i < text.length) {
+            element.textContent += text.charAt(i);
+            i++;
+          } else {
+            clearInterval(timer);
+          }
+        }, speed);
+      }
+
+      // Start typing effect after page load
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          typeWriter(originalText, heroTitle, 150);
+        }, 500);
+      });
+
+      // Add parallax effect to hero background
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const hero = document.querySelector('.hero');
+        const rate = scrolled * -0.5;
+
+        if (hero) {
+          hero.style.transform = `translateY(${rate}px)`;
+        }
+      });
+
+      // Add hover effect to service cards
+      document.querySelectorAll('.service-card').forEach((card) => {
+        card.addEventListener('mouseenter', function () {
+          this.style.transform = 'translateY(-10px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', function () {
+          this.style.transform = 'translateY(0) scale(1)';
+        });
+      });
+
+      // Add smooth reveal animation for stats
+      const statsObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const statNumber = entry.target.querySelector('.stat-number');
+              const finalNumber = statNumber.textContent;
+
+              // Animate numbers (simplified version)
+              if (finalNumber.includes('+')) {
+                const num = parseInt(finalNumber);
+                let current = 0;
+                const increment = num / 30;
+                const timer = setInterval(() => {
+                  current += increment;
+                  if (current >= num) {
+                    statNumber.textContent = finalNumber;
+                    clearInterval(timer);
+                  } else {
+                    statNumber.textContent = Math.floor(current) + '+';
+                  }
+                }, 50);
+              }
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      document.querySelectorAll('.stat-item').forEach((item) => {
+        statsObserver.observe(item);
+      });
+    </script>
+  </body>
+</html>

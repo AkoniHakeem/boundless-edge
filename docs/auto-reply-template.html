@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thank You for Your Inquiry - Boundless Edge</title>
+    <!--[if mso]>
+      <noscript>
+        <xml>
+          <o:OfficeDocumentSettings>
+            <o:AllowPNG />
+            <o:PixelsPerInch>96</o:PixelsPerInch>
+          </o:OfficeDocumentSettings>
+        </xml>
+      </noscript>
+    <![endif]-->
+    <style>
+      /* Reset styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      /* Base styles */
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        line-height: 1.6;
+        color: #333333;
+        background-color: #f4f6f8;
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Container */
+      .email-container {
+        max-width: 600px;
+        margin: 0 auto;
+        background-color: #ffffff;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Header */
+      .email-header {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        padding: 40px;
+        text-align: center;
+        color: white;
+      }
+
+      .logo {
+        font-size: 32px;
+        font-weight: 800;
+        margin-bottom: 15px;
+        letter-spacing: -0.5px;
+      }
+
+      .header-subtitle {
+        font-size: 18px;
+        opacity: 0.95;
+        font-weight: 400;
+      }
+
+      /* Content */
+      .email-content {
+        padding: 40px;
+      }
+
+      .greeting {
+        font-size: 20px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 25px;
+      }
+
+      .intro-text {
+        font-size: 16px;
+        color: #4a5568;
+        margin-bottom: 30px;
+        line-height: 1.7;
+      }
+
+      /* Confirmation Card */
+      .confirmation-card {
+        background: linear-gradient(135deg, #f0fff4 0%, #c6f6d5 100%);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+        border-left: 4px solid #38a169;
+        text-align: center;
+      }
+
+      .confirmation-icon {
+        font-size: 48px;
+        color: #38a169;
+        margin-bottom: 15px;
+      }
+
+      .confirmation-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 10px;
+      }
+
+      .confirmation-text {
+        font-size: 16px;
+        color: #4a5568;
+      }
+
+      /* Inquiry Summary */
+      .inquiry-summary {
+        background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+        border-left: 4px solid #667eea;
+      }
+
+      .summary-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+
+      .summary-row {
+        display: flex;
+        margin-bottom: 12px;
+        align-items: flex-start;
+      }
+
+      .summary-row:last-child {
+        margin-bottom: 0;
+      }
+
+      .summary-label {
+        font-weight: 600;
+        color: #2d3748;
+        width: 120px;
+        flex-shrink: 0;
+        font-size: 14px;
+      }
+
+      .summary-value {
+        color: #4a5568;
+        font-size: 14px;
+        flex: 1;
+      }
+
+      /* What's Next Section */
+      .next-steps {
+        background: linear-gradient(135deg, #ebf8ff 0%, #bee3f8 100%);
+        border-radius: 12px;
+        padding: 30px;
+        margin: 30px 0;
+        border-left: 4px solid #3182ce;
+      }
+
+      .next-steps-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+      }
+
+      .next-steps-icon {
+        font-size: 24px;
+        margin-right: 10px;
+        color: #3182ce;
+      }
+
+      .steps-list {
+        list-style: none;
+        padding: 0;
+      }
+
+      .step-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 15px;
+        font-size: 15px;
+        color: #4a5568;
+      }
+
+      .step-number {
+        background: #3182ce;
+        color: white;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 600;
+        margin-right: 15px;
+        flex-shrink: 0;
+      }
+
+      /* Response Time */
+      .response-time {
+        background: linear-gradient(135deg, #fef5e7 0%, #fed7aa 100%);
+        border-radius: 12px;
+        padding: 25px;
+        margin: 30px 0;
+        text-align: center;
+        border-left: 4px solid #f6ad55;
+      }
+
+      .response-icon {
+        font-size: 36px;
+        color: #ed8936;
+        margin-bottom: 15px;
+      }
+
+      .response-title {
+        font-size: 16px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 8px;
+      }
+
+      .response-text {
+        font-size: 14px;
+        color: #4a5568;
+      }
+
+      /* Contact Section */
+      .contact-section {
+        text-align: center;
+        margin: 40px 0;
+        padding: 30px;
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border-radius: 12px;
+      }
+
+      .contact-title {
+        font-size: 18px;
+        font-weight: 600;
+        color: #2d3748;
+        margin-bottom: 20px;
+      }
+
+      .contact-methods {
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        flex-wrap: wrap;
+      }
+
+      .contact-method {
+        text-align: center;
+        text-decoration: none;
+        color: #4a5568;
+        transition: color 0.3s ease;
+      }
+
+      .contact-method:hover {
+        color: #667eea;
+      }
+
+      .contact-icon {
+        font-size: 24px;
+        margin-bottom: 8px;
+        display: block;
+        color: #667eea;
+      }
+
+      .contact-label {
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      /* Footer */
+      .email-footer {
+        background: #2d3748;
+        color: white;
+        padding: 40px;
+        text-align: center;
+      }
+
+      .footer-logo {
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 15px;
+      }
+
+      .footer-text {
+        font-size: 14px;
+        opacity: 0.8;
+        margin-bottom: 20px;
+        line-height: 1.6;
+      }
+
+      .footer-links {
+        margin-bottom: 20px;
+      }
+
+      .footer-links a {
+        color: #81e6d9;
+        text-decoration: none;
+        margin: 0 15px;
+        font-size: 14px;
+      }
+
+      .footer-contact {
+        font-size: 14px;
+        opacity: 0.7;
+      }
+
+      /* Social Links */
+      .social-links {
+        margin: 20px 0;
+      }
+
+      .social-link {
+        display: inline-block;
+        margin: 0 10px;
+        color: #81e6d9;
+        text-decoration: none;
+        font-size: 20px;
+      }
+
+      /* Responsive Design */
+      @media only screen and (max-width: 600px) {
+        .email-container {
+          margin: 0;
+          border-radius: 0;
+        }
+
+        .email-header,
+        .email-content,
+        .email-footer {
+          padding: 30px 20px;
+        }
+
+        .confirmation-card,
+        .inquiry-summary,
+        .next-steps,
+        .response-time,
+        .contact-section {
+          padding: 20px;
+        }
+
+        .summary-row,
+        .step-item {
+          flex-direction: column;
+          gap: 5px;
+        }
+
+        .summary-label {
+          width: auto;
+          margin-bottom: 5px;
+        }
+
+        .contact-methods {
+          flex-direction: column;
+          gap: 20px;
+        }
+
+        .logo {
+          font-size: 28px;
+        }
+
+        .greeting {
+          font-size: 18px;
+        }
+      }
+
+      /* Dark mode support */
+      @media (prefers-color-scheme: dark) {
+        .email-container {
+          background-color: #1a202c;
+        }
+
+        .email-content {
+          color: #e2e8f0;
+        }
+
+        .greeting,
+        .confirmation-title,
+        .summary-title,
+        .next-steps-title,
+        .response-title,
+        .contact-title {
+          color: #f7fafc;
+        }
+
+        .intro-text,
+        .confirmation-text,
+        .summary-value,
+        .step-item,
+        .response-text {
+          color: #cbd5e0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="email-container">
+      <!-- Header -->
+      <div class="email-header">
+        <div class="logo">Boundless Edge</div>
+        <div class="header-subtitle">Thank You for Your Inquiry</div>
+      </div>
+
+      <!-- Content -->
+      <div class="email-content">
+        <div class="greeting">Hello {{from_name}}! 👋</div>
+
+        <div class="intro-text">
+          Thank you for reaching out to Boundless Edge! We've successfully
+          received your inquiry about your
+          <strong>{{project_type}}</strong> project, and we're excited to learn
+          more about your vision.
+        </div>
+
+        <!-- Confirmation Card -->
+        <div class="confirmation-card">
+          <div class="confirmation-icon">✅</div>
+          <div class="confirmation-title">Your Message Has Been Received</div>
+          <div class="confirmation-text">
+            We've got your inquiry and it's now in our system. Reference ID:
+            #{{submission_date}}
+          </div>
+        </div>
+
+        <!-- Inquiry Summary -->
+        <div class="inquiry-summary">
+          <div class="summary-title">Your Inquiry Summary</div>
+
+          <div class="summary-row">
+            <div class="summary-label">Name:</div>
+            <div class="summary-value">{{from_name}}</div>
+          </div>
+
+          <div class="summary-row">
+            <div class="summary-label">Email:</div>
+            <div class="summary-value">{{from_email}}</div>
+          </div>
+
+          <div class="summary-row">
+            <div class="summary-label">Company:</div>
+            <div class="summary-value">{{company}}</div>
+          </div>
+
+          <div class="summary-row">
+            <div class="summary-label">Project Type:</div>
+            <div class="summary-value">{{project_type}}</div>
+          </div>
+
+          <div class="summary-row">
+            <div class="summary-label">Submitted:</div>
+            <div class="summary-value">{{submission_date}}</div>
+          </div>
+        </div>
+
+        <!-- What's Next -->
+        <div class="next-steps">
+          <div class="next-steps-title">
+            <span class="next-steps-icon">🚀</span>
+            What Happens Next?
+          </div>
+
+          <ul class="steps-list">
+            <li class="step-item">
+              <span class="step-number">1</span>
+              <span
+                >Our team will review your project details within the next few
+                hours</span
+              >
+            </li>
+            <li class="step-item">
+              <span class="step-number">2</span>
+              <span
+                >We'll prepare a personalized response with initial thoughts and
+                questions</span
+              >
+            </li>
+            <li class="step-item">
+              <span class="step-number">3</span>
+              <span
+                >You'll receive a detailed email with next steps and scheduling
+                options</span
+              >
+            </li>
+            <li class="step-item">
+              <span class="step-number">4</span>
+              <span
+                >We'll schedule a consultation call to discuss your project in
+                depth</span
+              >
+            </li>
+          </ul>
+        </div>
+
+        <!-- Response Time -->
+        <div class="response-time">
+          <div class="response-icon">⏰</div>
+          <div class="response-title">Expected Response Time</div>
+          <div class="response-text">
+            <strong>Within 24 hours</strong> during business days<br />
+            Urgent inquiries are typically handled within 4-6 hours
+          </div>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="contact-section">
+          <div class="contact-title">Need Immediate Assistance?</div>
+          <div class="contact-methods">
+            <a href="mailto:dev@boundlesedge.com" class="contact-method">
+              <span class="contact-icon">📧</span>
+              <span class="contact-label">dev@boundlesedge.com</span>
+            </a>
+            <a href="tel:+2347011630342" class="contact-method">
+              <span class="contact-icon">📞</span>
+              <span class="contact-label">+234 701 163 0342</span>
+            </a>
+          </div>
+        </div>
+
+        <div
+          class="intro-text"
+          style="
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            text-align: center;
+          "
+        >
+          <strong>In the meantime,</strong> feel free to browse our portfolio
+          and case studies on our website. We're looking forward to discussing
+          how we can bring your vision to life!
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="email-footer">
+        <div class="footer-logo">Boundless Edge</div>
+        <div class="footer-text">
+          Transforming Ideas into Reality<br />
+          We specialize in turning your vision into exceptional digital
+          experiences.
+        </div>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="#" class="social-link">🔗</a>
+          <a href="#" class="social-link">📘</a>
+          <a href="#" class="social-link">🐦</a>
+          <a href="#" class="social-link">📷</a>
+        </div>
+
+        <div class="footer-links">
+          <a href="mailto:dev@boundlesedge.com">Email Us</a>
+          <a href="tel:+2347011630342">Call Us</a>
+          <a href="#">Website</a>
+          <a href="#">Portfolio</a>
+        </div>
+        <div class="footer-contact">
+          © 2025 Boundless Edge. All rights reserved.<br />
+          This is an automated confirmation email.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
