@@ -1157,7 +1157,7 @@ const modalForm = ref({
 
 // Options
 
-const trackOptions = [
+const trackOptions = ref([
   // Individual Trimesters
   'Trimester 1 Only - Foundations (₦300,000)',
   'Trimester 2 Only - Full-Stack Development (₦400,000)',
@@ -1166,7 +1166,7 @@ const trackOptions = [
   // Package Deals
   'Advanced Developer Track - Trimesters 2&3 (₦750,000)',
   'Complete Program - All 3 Trimesters (₦900,000)',
-];
+]);
 
 // Footer sections
 const footerSections = ref([

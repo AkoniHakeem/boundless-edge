@@ -32,8 +32,7 @@
             class="nav-link"
             >Portfolio</a
           >
-          <!-- TVET Program temporarily hidden -->
-          <!-- <router-link to="/tvet" class="nav-link">TVET Program</router-link> -->
+          <router-link to="/tvet" class="nav-link">TVET Program</router-link>
         </div>
 
         <div class="header-actions gt-sm">
@@ -88,10 +87,9 @@
               >
                 <q-item-section>Portfolio</q-item-section>
               </q-item>
-              <!-- TVET Program temporarily hidden -->
-              <!-- <q-item clickable v-close-popup :to="{ path: '/tvet' }">
+              <q-item clickable v-close-popup :to="{ path: '/tvet' }">
                 <q-item-section>TVET Program</q-item-section>
-              </q-item> -->
+              </q-item>
               <q-separator />
               <q-item
                 clickable
