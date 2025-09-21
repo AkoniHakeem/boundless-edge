@@ -577,9 +577,16 @@
                     <q-select
                       v-model="modalForm.track"
                       :options="trackOptions"
+                      option-label="label"
+                      option-value="value"
                       label="Choose Your Track *"
                       filled
                       required
+                      use-input
+                      hide-selected
+                      fill-input
+                      input-debounce="0"
+                      :popup-content-style="{ zIndex: '10002' }"
                     />
                   </div>
                   <div class="col-12">
@@ -1156,17 +1163,26 @@ const modalForm = ref({
 });
 
 // Options
-
-const trackOptions = ref([
-  // Individual Trimesters
-  'Trimester 1 Only - Foundations (₦300,000)',
-  'Trimester 2 Only - Full-Stack Development (₦400,000)',
-  'Trimester 3 Only - Engineering Excellence (₦400,000)',
-
-  // Package Deals
-  'Advanced Developer Track - Trimesters 2&3 (₦750,000)',
-  'Complete Program - All 3 Trimesters (₦900,000)',
-]);
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+const trackOptions = [
+  { label: 'Trimester 1 Only - Foundations (₦300,000)', value: 'trimester-1' },
+  {
+    label: 'Trimester 2 Only - Full-Stack Development (₦400,000)',
+    value: 'trimester-2',
+  },
+  {
+    label: 'Trimester 3 Only - Engineering Excellence (₦400,000)',
+    value: 'trimester-3',
+  },
+  {
+    label: 'Advanced Developer Track - Trimesters 2&3 (₦750,000)',
+    value: 'advanced-track',
+  },
+  {
+    label: 'Complete Program - All 3 Trimesters (₦900,000)',
+    value: 'complete-program',
+  },
+];
 
 // Footer sections
 const footerSections = ref([
@@ -2943,5 +2959,18 @@ watch(
 
 .q-dialog__inner {
   z-index: 10001 !important;
+}
+
+/* Fix for q-select dropdown in modals */
+:deep(.q-select__dropdown) {
+  z-index: 10003 !important;
+}
+
+:deep(.q-menu) {
+  z-index: 10003 !important;
+}
+
+:deep(.q-select .q-field__native) {
+  z-index: 1 !important;
 }
 </style>
