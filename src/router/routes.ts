@@ -6,12 +6,11 @@ const routes: RouteRecordRaw[] = [
     component: () => import('layouts/MainLayout.vue'),
     children: [{ path: '', component: () => import('pages/IndexPage.vue') }],
   },
-  // TVET Program temporarily hidden
-  // {
-  //   path: '/tvet',
-  //   component: () => import('layouts/MainLayout.vue'),
-  //   children: [{ path: '', component: () => import('pages/TvetPage.vue') }],
-  // },
+  {
+    path: '/tvet',
+    component: () => import('layouts/MainLayout.vue'),
+    children: [{ path: '', component: () => import('pages/TvetPage.vue') }],
+  },
   {
     path: '/projects/proposals/cuab',
     component: () => import('pages/CuabProposalPage.vue'),

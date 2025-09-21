@@ -311,41 +311,206 @@
               </q-card>
             </div>
 
-            <!-- Investment Plans Section -->
+            <!-- Program Options Section -->
             <div class="investment-section q-mb-xl">
-              <div class="text-center q-mb-lg">
-                <h2 class="text-h4 text-weight-bold text-grey-9">
-                  Your Investment in a Tech Career
+              <!-- Program Options Header -->
+              <div class="text-center q-mb-xl">
+                <h2 class="text-h4 text-weight-bold text-grey-9 q-mb-md">
+                  Choose Your Learning Path
                 </h2>
                 <p
                   class="text-body1 text-grey-6"
-                  style="max-width: 500px; margin: 0 auto"
+                  style="max-width: 600px; margin: 0 auto"
                 >
-                  Choose a payment plan that works for you. All plans provide
-                  full access to the 9-month program, mentorship, and career
-                  support.
+                  Join at any trimester or take the complete program. Flexible
+                  options designed to fit your schedule, experience level, and
+                  budget.
                 </p>
               </div>
 
-              <div class="pricing-grid row q-col-gutter-lg justify-center">
-                <div class="col-md-4 col-sm-12">
-                  <q-card class="pricing-card q-pa-lg text-center">
+              <!-- Individual Trimesters -->
+              <div class="section-header text-center q-mb-lg">
+                <h3 class="text-h5 text-weight-bold text-grey-8 q-mb-sm">
+                  Individual Trimesters
+                </h3>
+                <p class="text-body2 text-grey-6">
+                  Take one trimester at a time
+                </p>
+              </div>
+
+              <div
+                class="pricing-grid row q-col-gutter-lg justify-center q-mb-xl"
+              >
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <q-card
+                    class="pricing-card individual-trimester q-pa-lg text-center"
+                  >
+                    <div
+                      class="trimester-badge text-caption text-weight-bold text-primary q-mb-md"
+                    >
+                      TRIMESTER 1
+                    </div>
+                    <div class="text-h6 text-weight-bold text-grey-8 q-mb-sm">
+                      Foundations & First Slice
+                    </div>
+                    <div class="text-h3 text-weight-bold text-primary q-mb-sm">
+                      ₦300,000
+                    </div>
+                    <div
+                      class="text-subtitle2 text-weight-medium text-grey-7 q-mb-md"
+                    >
+                      3 months • Perfect for beginners
+                    </div>
+                    <div class="features-list text-left q-mb-md">
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ Git & Command Line
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ JavaScript Fundamentals
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ HTML/CSS & Frontend Basics
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ First Full-Stack App
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7">
+                        ✓ Project Management Tools
+                      </div>
+                    </div>
+                    <div class="prerequisites">
+                      <span class="text-caption text-green-6"
+                        >No experience required</span
+                      >
+                    </div>
+                  </q-card>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <q-card
+                    class="pricing-card individual-trimester q-pa-lg text-center"
+                  >
+                    <div
+                      class="trimester-badge text-caption text-weight-bold text-purple q-mb-md"
+                    >
+                      TRIMESTER 2
+                    </div>
+                    <div class="text-h6 text-weight-bold text-grey-8 q-mb-sm">
+                      Full-Stack Development
+                    </div>
+                    <div class="text-h3 text-weight-bold text-purple q-mb-sm">
+                      ₦400,000
+                    </div>
+                    <div
+                      class="text-subtitle2 text-weight-medium text-grey-7 q-mb-md"
+                    >
+                      3 months • Intermediate level
+                    </div>
+                    <div class="features-list text-left q-mb-md">
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ React/Vue/Angular Frameworks
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ Database Design (PostgreSQL)
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ Backend APIs & Authentication
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ Python & Java Introduction
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7">
+                        ✓ Complete Full-Stack Project
+                      </div>
+                    </div>
+                    <div class="prerequisites">
+                      <span class="text-caption text-orange-6"
+                        >Requires Trimester 1 or equivalent</span
+                      >
+                    </div>
+                  </q-card>
+                </div>
+
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <q-card
+                    class="pricing-card individual-trimester q-pa-lg text-center"
+                  >
+                    <div
+                      class="trimester-badge text-caption text-weight-bold text-pink q-mb-md"
+                    >
+                      TRIMESTER 3
+                    </div>
+                    <div class="text-h6 text-weight-bold text-grey-8 q-mb-sm">
+                      Engineering Excellence
+                    </div>
+                    <div class="text-h3 text-weight-bold text-pink q-mb-sm">
+                      ₦400,000
+                    </div>
+                    <div
+                      class="text-subtitle2 text-weight-medium text-grey-7 q-mb-md"
+                    >
+                      3 months • Advanced level
+                    </div>
+                    <div class="features-list text-left q-mb-md">
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ Algorithms & Data Structures
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ System Design Principles
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ Performance Optimization
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7 q-mb-xs">
+                        ✓ CI/CD & Cloud Deployment
+                      </div>
+                      <div class="feature-item text-body2 text-grey-7">
+                        ✓ Capstone Project
+                      </div>
+                    </div>
+                    <div class="prerequisites">
+                      <span class="text-caption text-red-6"
+                        >Portfolio review required</span
+                      >
+                    </div>
+                  </q-card>
+                </div>
+              </div>
+
+              <!-- Package Deals -->
+              <div class="section-header text-center q-mb-lg">
+                <h3 class="text-h5 text-weight-bold text-grey-8 q-mb-sm">
+                  Package Deals - Save More
+                </h3>
+                <p class="text-body2 text-grey-6">
+                  Combine trimesters for better value
+                </p>
+              </div>
+
+              <div
+                class="pricing-grid row q-col-gutter-lg justify-center q-mb-xl"
+              >
+                <div class="col-md-6 col-sm-12">
+                  <q-card class="pricing-card package-deal q-pa-lg text-center">
                     <div class="text-h6 text-weight-bold text-grey-8 q-mb-md">
-                      Standard Installment
+                      Advanced Developer Track
                     </div>
                     <div class="text-h3 text-weight-bold text-grey-9 q-mb-sm">
                       ₦750,000
                     </div>
                     <div class="text-subtitle2 text-weight-medium text-grey-7">
-                      ₦300,000 initial payment
+                      Trimesters 2 & 3 Combined
                     </div>
-                    <div class="text-caption text-grey-6">
-                      + 3 monthly installments of ₦150,000
+                    <div class="text-caption text-green-6 q-mb-md">
+                      Save ₦50,000 (vs individual pricing)
+                    </div>
+                    <div class="text-body2 text-grey-7">
+                      6 months • For developers with basic skills
                     </div>
                   </q-card>
                 </div>
 
-                <div class="col-md-4 col-sm-12">
+                <div class="col-md-6 col-sm-12">
                   <q-card
                     class="pricing-card featured-plan q-pa-lg text-center relative-position"
                   >
@@ -356,31 +521,19 @@
                       rounded
                     />
                     <div class="text-h6 text-weight-bold text-white q-mb-md">
-                      Full Payment
+                      Complete Developer Program
                     </div>
                     <div class="text-h3 text-weight-bold text-white q-mb-sm">
-                      ₦700,000
+                      ₦900,000
                     </div>
                     <div class="text-subtitle2 text-weight-medium text-blue-2">
-                      One-time upfront payment
+                      All 3 Trimesters • Full 9-Month Program
                     </div>
-                    <div class="text-caption text-blue-3">Save ₦100,000</div>
-                  </q-card>
-                </div>
-
-                <div class="col-md-4 col-sm-12">
-                  <q-card class="pricing-card q-pa-lg text-center">
-                    <div class="text-h6 text-weight-bold text-grey-8 q-mb-md">
-                      Flexible Installment
+                    <div class="text-caption text-blue-3 q-mb-md">
+                      Save ₦200,000
                     </div>
-                    <div class="text-h3 text-weight-bold text-grey-9 q-mb-sm">
-                      ₦800,000
-                    </div>
-                    <div class="text-subtitle2 text-weight-medium text-grey-7">
-                      ₦200,000 initial payment
-                    </div>
-                    <div class="text-caption text-grey-6">
-                      + 4 monthly installments of ₦150,000
+                    <div class="text-body2 text-blue-2">
+                      Complete journey from beginner to pro developer
                     </div>
                   </q-card>
                 </div>
@@ -875,93 +1028,45 @@
       </div>
     </section>
 
-    <!-- Application Section -->
-    <section id="apply" class="application-section section">
-      <div class="application-container">
-        <h2 class="section-title">Start Your Journey Today</h2>
-        <p class="section-subtitle">
-          Take the first step towards your new career. Fill out the form below
-          to apply for your chosen program.
-        </p>
-
-        <div v-if="!formSubmitted">
-          <q-form @submit="onSubmit" class="application-form">
-            <div class="form-grid row q-col-gutter-md">
-              <q-input
-                class="col-md-4 col-12"
-                v-model="form.name"
-                label="Full Name"
-                outlined
-                :rules="[(val) => !!val || 'Name is required']"
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-grid">
+          <div class="footer-section">
+            <div class="footer-logo">
+              <img
+                src="/images/Boundless_Edge_-Logo-nobg.png"
+                alt="Boundless Edge"
+                class="footer-logo-image"
               />
-              <q-input
-                class="col-md-4 col-12"
-                v-model="form.email"
-                label="Email Address"
-                type="email"
-                outlined
-                :rules="[
-                  (val) => !!val || 'Email is required',
-                  (val) => /.+@.+\..+/.test(val) || 'Email is invalid',
-                ]"
-              />
-              <q-input
-                class="col-md-4 col-12"
-                v-model="form.phone"
-                label="Phone Number"
-                type="tel"
-                outlined
-                :rules="[(val) => !!val || 'Phone number is required']"
-              />
-              <q-select
-                class="col-md-6 col-12"
-                v-model="form.program"
-                :options="programOptions"
-                label="Program of Interest"
-                outlined
-                :rules="[(val) => !!val || 'Please select a program']"
-              />
-              <q-input
-                class="col-6 col-12"
-                v-model="form.experience"
-                label="Previous Experience (Optional)"
-                outlined
-              />
-              <q-input
-                class="col-12"
-                v-model="form.message"
-                label="Tell us about your career goals"
-                type="textarea"
-                outlined
-                rows="4"
-                :rules="[(val) => !!val || 'Please tell us about your goals']"
-              />
+              <h3>Boundless Edge</h3>
             </div>
+            <p style="color: rgba(255, 255, 255, 0.7); line-height: 1.6">
+              Transforming ideas into reality through innovative digital
+              solutions and comprehensive TVET programs. Building tomorrow's
+              tech leaders.
+            </p>
+          </div>
 
-            <div class="form-actions">
-              <q-btn
-                type="submit"
-                label="Submit Application"
-                color="primary"
-                size="lg"
-                :loading="isSubmitting"
-                no-caps
-                class="submit-btn"
-              />
-            </div>
-          </q-form>
+          <div
+            class="footer-section"
+            v-for="section in footerSections"
+            :key="section.title"
+          >
+            <h3>{{ section.title }}</h3>
+            <ul>
+              <li v-for="link in section.links" :key="link.name">
+                <a :href="link.url">{{ link.name }}</a>
+              </li>
+            </ul>
+          </div>
         </div>
 
-        <div v-else class="thank-you-message text-center">
-          <q-icon name="check_circle" class="success-icon" />
-          <h3>Thank You!</h3>
-          <p>
-            Your application has been submitted successfully. We'll be in touch
-            within 2-3 business days.
-          </p>
+        <div class="footer-bottom">
+          <p>&copy; 2025 Boundless Edge Limited. All rights reserved.</p>
         </div>
       </div>
-    </section>
+    </footer>
   </q-page>
 </template>
 
@@ -1039,19 +1144,7 @@ const showCurriculumModal = ref(false);
 const showTrimesterModal = ref(false);
 const selectedProgram = ref<Program | null>(null);
 const selectedTrimester = ref<Trimester | null>(null);
-const formSubmitted = ref(false);
-const isSubmitting = ref(false);
 const isModalSubmitting = ref(false);
-
-// Form data
-const form = ref({
-  name: '',
-  email: '',
-  phone: '',
-  program: '',
-  experience: '',
-  message: '',
-});
 
 // Modal form data
 const modalForm = ref({
@@ -1063,22 +1156,50 @@ const modalForm = ref({
 });
 
 // Options
-const programOptions = [
-  'Full Stack Web Development',
-  'Digital Marketing & E-commerce',
-  'Renewable Energy Systems',
-  'Healthcare Technology',
-  'Financial Technology (FinTech)',
-  'Agricultural Technology',
-  'Other - Please specify in message',
-];
 
 const trackOptions = [
-  'Full-Stack Development (All 3 trimesters)',
-  'Frontend Focused Track',
-  'Backend Focused Track',
-  'I need guidance choosing a track',
+  // Individual Trimesters
+  'Trimester 1 Only - Foundations (₦300,000)',
+  'Trimester 2 Only - Full-Stack Development (₦400,000)',
+  'Trimester 3 Only - Engineering Excellence (₦400,000)',
+
+  // Package Deals
+  'Advanced Developer Track - Trimesters 2&3 (₦750,000)',
+  'Complete Program - All 3 Trimesters (₦900,000)',
 ];
+
+// Footer sections
+const footerSections = ref([
+  {
+    title: 'TVET Programs',
+    links: [
+      { name: 'Full Stack Development', url: '#programs' },
+      { name: 'Digital Marketing', url: '#programs' },
+      { name: 'Renewable Energy', url: '#programs' },
+      { name: 'Healthcare Technology', url: '#programs' },
+      { name: 'FinTech Solutions', url: '#programs' },
+    ],
+  },
+  {
+    title: 'Company',
+    links: [
+      { name: 'About Us', url: '/#about' },
+      { name: 'Services', url: '/#services' },
+      { name: 'Portfolio', url: '/#portfolio' },
+      { name: 'Contact', url: '/#contact' },
+      { name: 'Home', url: '/' },
+    ],
+  },
+  {
+    title: 'Connect',
+    links: [
+      { name: 'LinkedIn', url: '#linkedin' },
+      { name: 'Twitter', url: '#twitter' },
+      { name: 'GitHub', url: '#github' },
+      { name: 'Email Us', url: 'mailto:info@boundlessedge.ng' },
+    ],
+  },
+]);
 
 // Technologies data
 const technologies = [
@@ -1127,9 +1248,9 @@ const capstoneStrategy = [
 
 // Comprehensive curriculum data
 const curriculumData = ref<CurriculumData>({
-  title: '9-Month Software Developer TVET Program',
+  title: '9-Month Software Developer TVET Program: The Spiral Learning Path',
   subtitle:
-    'A spiral, iterative, and multi-language curriculum designed to take you from beginner to a job-ready professional developer.',
+    'This curriculum uses a spiral, iterative approach and a multi-language teaching model. JavaScript/TypeScript is the primary language used to introduce and explain core concepts. Java and Python are introduced in the second trimester as alternative backend languages, allowing students to compare paradigms and choose a language of specialization for their capstone project. The principle is: Introduce, Apply, Deepen.',
   icons: {
     tools:
       '<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>',
@@ -1151,16 +1272,16 @@ const curriculumData = ref<CurriculumData>({
     {
       id: 1,
       title: 'Trimester 1 (Months 1-3): Foundations & The First Full Slice',
-      goal: 'Rapidly move from zero knowledge to building a complete, simple application slice, while learning professional tools and workflows.',
+      goal: 'To rapidly move students from zero knowledge to building a complete, albeit simple, application slice, while introducing professional tools and workflows from day one.',
       isExpanded: true,
       modules: [
         {
           title: 'Module 1: Core Toolkit & Programming Logic',
           icon: 'tools',
           topics: [
-            'Git & Version Control',
-            'Command Line (Linux)',
-            'JavaScript Fundamentals',
+            'Git & Version Control: git init, add, commit, push, pull, branch, merge',
+            'Command Line (Linux): Navigating (ls, cd, pwd) and managing files (mkdir, touch, cp, rm)',
+            'JavaScript Fundamentals: Variables, data types, operators, conditionals (if/else), loops (for, while), functions',
           ],
         },
         {
@@ -1168,29 +1289,31 @@ const curriculumData = ref<CurriculumData>({
           goal: 'Show how JavaScript can make a webpage interactive.',
           icon: 'frontend',
           topics: [
-            'HTML (Semantic HTML5)',
-            'CSS (Flexbox)',
-            'The DOM (Document Object Model)',
+            'HTML: The structure of a webpage (semantic HTML5)',
+            'CSS: Simple styling and layout with Flexbox',
+            'The DOM (Document Object Model): Using JavaScript to select, change, and create HTML elements dynamically',
+            'Mini-Project: A simple to-do list application that works entirely in the browser',
           ],
         },
         {
           title: 'Module 3: The Other Side of the Web (Backend - Shallow Dive)',
-          goal: 'Introduce the client-server model and API testing tools.',
+          goal: 'Introduce the client-server model and the essential tools for testing APIs.',
           icon: 'backend',
           topics: [
-            'Node.js & Express.js',
-            'Simple API Creation',
-            'API Clients (Postman)',
+            'Node.js & Express.js: Setting up a basic server that listens for requests',
+            'Simple API: Creating an endpoint that responds with a simple text or JSON message',
+            'API Clients: Introduction to Postman for testing and documenting API endpoints',
+            'Mini-Project: A "Hello World" server, tested and verified using Postman',
           ],
         },
         {
           title:
             'Module 4: Planting the Seeds (OOP & Algorithms - Shallow Dive)',
-          goal: 'Introduce advanced concepts through practical problems.',
+          goal: 'Introduce advanced concepts through practical problems in JavaScript.',
           icon: 'theory',
           topics: [
-            'OOP as a Pattern in JavaScript',
-            'Algorithmic Thinking & Efficiency Questions',
+            'OOP as a Pattern: Grouping related data and functions into a single JavaScript Object',
+            'Algorithmic Thinking: Posing efficiency questions. "How can we find a specific item in a list? Let\'s write a function to loop through it. Could this be slow if the list is huge?"',
           ],
         },
         {
@@ -1198,10 +1321,10 @@ const curriculumData = ref<CurriculumData>({
           goal: 'Introduce the fundamentals of modern software project management.',
           icon: 'pm',
           topics: [
-            'Team Roles (PM, UI/UX, Dev, QA)',
-            'PM Tools (Linear/ClickUp)',
-            'Connecting Code to Tasks (Git Branches)',
-            'Collaborative Workflows (GitHub Pull Requests)',
+            'Team Roles: Understanding the roles of Product Manager, UI/UX Designer, Developer, and QA Engineer',
+            'Project Management Tools: Using a tool like Linear/ClickUp to manage tasks (tickets/issues)',
+            'Connecting Code to Tasks: The workflow of creating a Git branch for a specific ticket',
+            'Collaborative Workflows: Using GitHub for code reviews via Pull Requests',
           ],
         },
       ],
@@ -1216,75 +1339,74 @@ const curriculumData = ref<CurriculumData>({
       id: 2,
       title:
         'Trimester 2 (Months 4-6): Building a Robust Full-Stack Application',
-      goal: 'Deepen knowledge by building a complete, database-driven application, while introducing Python and Java as powerful backend alternatives.',
+      goal: 'To deepen knowledge by building a complete, database-driven application, while introducing Python and Java as powerful backend alternatives and applying project management principles.',
       isExpanded: false,
       modules: [
         {
           title: 'Module 1: Modern Frontend Development (Deep Dive)',
-          goal: "Master a component-based framework and compare the modern 'big three'.",
+          goal: 'Move from direct DOM manipulation to a powerful, component-based framework, understanding the core principles shared by modern frameworks and gaining practical experience in React, Vue, and Angular.',
           icon: 'frontend',
           topics: [
-            'Core Framework Concepts (Virtual DOM, Components)',
-            'Primary Framework: React & TypeScript',
-            'Introduction to Vue.js and Angular',
-            'Comparative Analysis',
+            'The "Why": Modern Framework Concepts: Understanding the virtual DOM, component-based architecture, state management, and props',
+            'Primary Framework: React & TypeScript: Core Concepts (Components, JSX, State), Side Effects & Data Fetching (useEffect), and Client-Side Routing',
+            'Introduction to Alternative Frameworks: Vue.js (Templates, reactive state) and Angular (Modules, Components, Services, Dependency Injection)',
+            'Comparative Analysis: Highlighting differences in philosophy, syntax, and state management approaches',
           ],
         },
         {
           title: 'Module 2: Professional Backend Development (Deep Dive)',
-          goal: 'Build a secure, persistent backend API and compare backend ecosystems.',
+          goal: 'Build a secure, persistent backend API and compare backend ecosystems, using Postman for all testing.',
           icon: 'backend',
           topics: [
-            'Databases (SQL vs NoSQL)',
-            'SQL Specifics (PostgreSQL)',
-            'RESTful APIs (CRUD) in Node.js',
-            'Regular Expressions (Regex) for Validation',
-            'Authentication & Security (bcrypt, JWT)',
-            'Intro to Python (Flask/Django) & Java (Spring Boot)',
+            'Databases: Understanding the difference between SQL and NoSQL',
+            'SQL Specifics (PostgreSQL): Database Design & Schema, Tables & Data Types, Primary & Foreign Keys, CRUD Operations (SELECT, INSERT, UPDATE, DELETE), and Basic JOINs',
+            'RESTful APIs (CRUD): Building a full API in Node.js',
+            'Regular Expressions (Regex): For powerful string searching, data validation (e.g., email, password strength), and sanitization',
+            'Authentication & Security: Hashing passwords (bcrypt) and using JWTs',
+            'Introduction to Alternative Backends: Python (Flask/Django) and Java (Spring Boot) for building basic CRUD APIs',
+            'Comparative Analysis: Highlighting differences in typing, concurrency models, and ecosystem strengths',
           ],
         },
         {
           title: 'Module 3: Formal Object-Oriented Programming (Deep Dive)',
-          goal: 'Formally learn OOP principles by comparing implementations.',
+          goal: 'Formally learn OOP principles by comparing implementations in JavaScript, Java, and Python.',
           icon: 'theory',
           topics: [
-            'Formal Theory & The Four Pillars',
-            'Language-Specific OOP in JS, Java, and Python',
+            'Formal Theory & The Four Pillars: Encapsulation, Abstraction, Inheritance, Polymorphism',
+            'Language-Specific OOP: Comparing class syntax and object models across the three languages',
           ],
         },
       ],
       outcome: {
         title: '🏆 Trimester Project',
         description:
-          'Build a complete full-stack application (React/Vue/Angular + Node/Python/Java), fully managed on a PM tool and GitHub.',
+          'Build a complete full-stack application. The frontend can be built in React, Vue, or Angular. The backend can be built in Node.js, Python, or Java. The entire project must be managed on a PM tool, with all work done in feature branches and merged via Pull Requests on GitHub.',
       },
       break: '🗓️ End of Trimester 2: 1-Week Break',
     },
     {
       id: 3,
       title: 'Trimester 3 (Months 7-9): The Engineering Mindset',
-      goal: 'Transition from developer to engineer, focusing on performance, scalability, and design, culminating in a major capstone project.',
+      goal: 'To transition from a developer into an engineer by focusing on universal principles of performance, scalability, design, and deployment, culminating in a major capstone project.',
       isExpanded: false,
       modules: [
         {
           title: 'Module 1: Formal Algorithms & Data Structures (Deep Dive)',
-          goal: 'Learn to formally analyze and choose performant code.',
+          goal: 'Learn to formally analyze and choose performant code, recognizing that these principles are language-agnostic.',
           icon: 'theory',
           topics: [
-            'Performance Analysis (Big O Notation)',
-            'Core Data Structures (Hash Maps, Trees, etc.)',
-            'Essential Algorithms (Searching & Sorting)',
+            'Performance Analysis (Theory): Big O Notation, Time & Space Complexity',
+            'Core Data Structures: Hash Maps, Stacks, Queues, Trees. Implementations will be compared across JS, Python, and Java',
+            'Essential Algorithms: Searching and Sorting',
           ],
         },
         {
           title: 'Module 2: Formal OS & Computer Architecture for Developers',
-          goal: 'Understand the underlying system to make informed architectural decisions.',
+          goal: 'Understand the underlying system to make informed architectural decisions, regardless of language.',
           icon: 'theory',
           topics: [
-            'The Runtime Environment (Stack vs. Heap)',
-            'JS Event Loop vs. Java Multi-threading',
-            'Processes vs. Threads',
-            'Concurrency vs. Parallelism',
+            "The Runtime Environment: Memory (Stack vs. Heap), Garbage Collection. Comparing the JS Event Loop to Java's multi-threaded model",
+            'Operating System Interaction: Processes vs. Threads, Concurrency vs. Parallelism',
           ],
         },
         {
@@ -1292,9 +1414,9 @@ const curriculumData = ref<CurriculumData>({
           goal: 'Learn the foundational principles of designing scalable and resilient systems.',
           icon: 'theory',
           topics: [
-            'Foundations (API Gateways, DNS, HTTP)',
-            'Designing for Scale (Load Balancing, Caching)',
-            'Architectural Patterns (Monolith vs. Microservices)',
+            'Foundations: Client-Server Architecture, API Gateways, Network Protocols (DNS, HTTP)',
+            'Designing for Scale: Load Balancing, Caching (Redis), Database Scaling (Read Replicas)',
+            'Architectural Patterns (Theory): Monolith vs. Microservices',
           ],
         },
         {
@@ -1302,28 +1424,28 @@ const curriculumData = ref<CurriculumData>({
           goal: 'Understand the full lifecycle of software from code to live production.',
           icon: 'backend',
           topics: [
-            'Cloud Platforms (IaaS, PaaS, FaaS)',
-            'Deployment Strategies',
-            'CI/CD with GitHub Actions',
-            'Maintenance & Monitoring',
+            'Cloud Platforms: Overview of IaaS (AWS EC2), PaaS (Heroku, Vercel), and FaaS (Serverless)',
+            'Deployment Strategies: Hands-on guide to deploying the capstone project to a PaaS',
+            'CI/CD (Continuous Integration/Deployment): Automating testing and deployment with GitHub Actions',
+            'Maintenance & Monitoring: Introduction to application logging and monitoring for errors and uptime',
           ],
         },
       ],
     },
   ],
   capstone: {
-    title: 'Final Capstone Project (Final Month)',
-    task: 'Build a new, complex, full-stack application from scratch, managed via a PM tool and GitHub.',
+    title: '🎓 Final Capstone Project (Final Month)',
+    task: 'Build a new, complex, full-stack application from scratch, managed via a PM tool and GitHub. The final month of this trimester is dedicated to this project.',
     languageChoice:
-      'Frontend (React, Vue, or Angular) and Backend (Node.js/TypeScript, Java, or Python).',
+      'Frontend can be React, Vue, or Angular. Backend can be Node.js/TypeScript, Java (Spring Boot), or Python (Django/Flask).',
     requirements:
-      'Students must justify architectural choices, design for potential scale, and deploy the application using a CI/CD pipeline.',
+      'Students must justify their architectural choices, design for potential scale, and deploy the application using a CI/CD pipeline.',
     guide: [
-      'Start Early: Begin planning and prototyping during the first two months of the trimester.',
-      'Scope Realistically: Define a clear Minimum Viable Product (MVP).',
-      'Plan & Design First: Create a project plan, database schema, and simple UI wireframes before coding.',
-      'Use Your PM Tools: Break down the project into small, actionable tasks.',
-      'Iterate and Get Feedback: Build in small increments and seek regular feedback.',
+      'Start Early: Begin planning, research, and prototyping during the first two months of the trimester. Do not wait for the final month to start.',
+      "Scope Realistically: Define a clear Minimum Viable Product (MVP). It's better to have a smaller, polished, working application than a large, buggy, unfinished one.",
+      'Plan & Design First: Before writing code, create a project plan, design the database schema, map out API endpoints, and create simple wireframes for the UI.',
+      'Use Your PM Tools: Break down the entire project into small, actionable tasks (e.g., "Create user login component," "Set up user database table") in your project management tool.',
+      'Iterate and Get Feedback: Build in small increments. Get a feature working, merge it, and move to the next. Seek regular feedback from instructors and peers.',
     ],
     outcome:
       'A live, portfolio-ready project that showcases their full range of skills as a job-ready developer.',
@@ -1568,29 +1690,6 @@ const getIcon = (name: string) => {
   return curriculumData.value.icons[name] || '';
 };
 
-const onSubmit = async () => {
-  isSubmitting.value = true;
-  try {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
-    formSubmitted.value = true;
-
-    // Reset form
-    form.value = {
-      name: '',
-      email: '',
-      phone: '',
-      program: '',
-      experience: '',
-      message: '',
-    };
-  } catch (error) {
-    console.error('Error submitting form:', error);
-  } finally {
-    isSubmitting.value = false;
-  }
-};
-
 const onModalSubmit = async () => {
   isModalSubmitting.value = true;
   try {
@@ -1651,6 +1750,7 @@ watch(
   text-align: center;
   position: relative;
   overflow: hidden;
+  z-index: 1;
 
   &::before {
     content: '';
@@ -1907,6 +2007,10 @@ watch(
     transition: all 0.3s ease;
     cursor: pointer;
     border: 1px solid #e9ecef;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
 
     &:hover {
       transform: translateY(-5px);
@@ -1973,6 +2077,9 @@ watch(
       padding: 12px;
       border-radius: 8px;
       font-weight: 600;
+      margin-top: 1rem;
+      text-align: center;
+      align-self: flex-end;
     }
   }
 }
@@ -2643,5 +2750,198 @@ watch(
   .timeline-circle {
     box-shadow: 0 0 0 4px #111827;
   }
+}
+
+// Individual trimester and package pricing styles
+.individual-trimester {
+  border: 1px solid #e5e7eb;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border-color: #d1d5db;
+  }
+
+  .trimester-badge {
+    background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
+    color: #374151;
+    padding: 4px 12px;
+    border-radius: 12px;
+    display: inline-block;
+  }
+
+  .features-list {
+    .feature-item {
+      position: relative;
+      padding-left: 8px;
+    }
+  }
+}
+
+.package-deal {
+  border: 2px solid #e5e7eb;
+  position: relative;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+    border-color: #10b981;
+  }
+
+  &::before {
+    content: 'SAVE';
+    position: absolute;
+    top: -10px;
+    left: 20px;
+    background: #10b981;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 10px;
+    font-weight: bold;
+  }
+}
+
+.section-header {
+  margin-bottom: 2rem;
+
+  h3,
+  h4 {
+    position: relative;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60px;
+      height: 2px;
+      background: linear-gradient(45deg, #667eea, #764ba2);
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .individual-trimester,
+  .package-deal {
+    margin-bottom: 1.5rem;
+  }
+}
+
+/* Footer */
+.footer {
+  background: #0c0c0c;
+  color: rgba(255, 255, 255, 0.8);
+  padding: 3rem 2rem 2rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  color: white;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.footer-logo-image {
+  height: 32px;
+  width: auto;
+  max-width: 120px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 6px 10px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  filter: brightness(1.2);
+  transition: all 0.3s ease;
+}
+
+.footer-logo-image:hover {
+  background: rgba(255, 255, 255, 0.15);
+  transform: translateY(-1px);
+}
+
+.footer-logo h3 {
+  margin: 0;
+  font-size: 1.3rem;
+  background: linear-gradient(135deg, #ffffff 0%, #a8edea 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.footer-section ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer-section ul li a {
+  color: rgba(255, 255, 255, 0.7);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #667eea;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 2rem;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+/* Ensure modals appear above header */
+:deep(.q-dialog) {
+  z-index: 10000 !important;
+}
+
+:deep(.q-dialog__backdrop) {
+  z-index: 9999 !important;
+}
+
+:deep(.q-dialog__inner) {
+  z-index: 10001 !important;
+}
+
+/* Additional Quasar modal overrides */
+.q-dialog {
+  z-index: 10000 !important;
+}
+
+.q-dialog__backdrop {
+  z-index: 9999 !important;
+}
+
+.q-dialog__inner {
+  z-index: 10001 !important;
 }
 </style>
