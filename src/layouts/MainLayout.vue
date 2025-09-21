@@ -18,15 +18,21 @@
 
         <div class="nav-links gt-sm">
           <a
+            v-if="!isTvetPage"
             href="#services"
             @click="scrollToSection('services')"
             class="nav-link"
             >Services</a
           >
-          <a href="#about" @click="scrollToSection('about')" class="nav-link"
+          <a
+            v-if="!isTvetPage"
+            href="#about"
+            @click="scrollToSection('about')"
+            class="nav-link"
             >About</a
           >
           <a
+            v-if="!isTvetPage"
             href="#portfolio"
             @click="scrollToSection('portfolio')"
             class="nav-link"
@@ -35,7 +41,7 @@
           <router-link to="/tvet" class="nav-link">TVET Program</router-link>
         </div>
 
-        <div class="header-actions gt-sm">
+        <div class="header-actions gt-sm" v-if="!isTvetPage">
           <a
             href="#contact"
             class="cta-button"
@@ -71,16 +77,23 @@
           <q-menu v-model="mobileMenuOpen" class="mobile-menu">
             <q-list>
               <q-item
+                v-if="!isTvetPage"
                 clickable
                 v-close-popup
                 @click="scrollToSection('services')"
               >
                 <q-item-section>Services</q-item-section>
               </q-item>
-              <q-item clickable v-close-popup @click="scrollToSection('about')">
+              <q-item
+                v-if="!isTvetPage"
+                clickable
+                v-close-popup
+                @click="scrollToSection('about')"
+              >
                 <q-item-section>About</q-item-section>
               </q-item>
               <q-item
+                v-if="!isTvetPage"
                 clickable
                 v-close-popup
                 @click="scrollToSection('portfolio')"
@@ -90,8 +103,9 @@
               <q-item clickable v-close-popup :to="{ path: '/tvet' }">
                 <q-item-section>TVET Program</q-item-section>
               </q-item>
-              <q-separator />
+              <q-separator v-if="!isTvetPage" />
               <q-item
+                v-if="!isTvetPage"
                 clickable
                 v-close-popup
                 @click="scrollToSection('contact')"
@@ -113,10 +127,15 @@
 </template>
 
 <script setup lang="ts">
-import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { ref, onMounted, onBeforeUnmount, computed } from 'vue';
+import { useRoute } from 'vue-router';
 
+const route = useRoute();
 const isScrolled = ref(false);
 const mobileMenuOpen = ref(false);
+
+// Check if current route is TVET page
+const isTvetPage = computed(() => route.path === '/tvet');
 
 const handleScroll = () => {
   isScrolled.value = window.scrollY > 50;
