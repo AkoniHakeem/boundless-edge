@@ -1709,24 +1709,49 @@ const getIcon = (name: string) => {
 const onModalSubmit = async () => {
   isModalSubmitting.value = true;
   try {
-    // Simulate API call
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // Send application to Netlify function
+    const response = await fetch('/.netlify/functions/apply-tvet', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(modalForm.value),
+    });
 
-    // Reset modal form
-    modalForm.value = {
-      name: '',
-      email: '',
-      phone: '',
-      track: '',
-      message: '',
-    };
+    const result = await response.json();
 
-    showProgramModal.value = false;
+    if (response.ok) {
+      // Reset modal form on success
+      modalForm.value = {
+        name: '',
+        email: '',
+        phone: '',
+        track: '',
+        message: '',
+      };
 
-    // Show success message or redirect
-    console.log('Modal form submitted successfully');
+      showProgramModal.value = false;
+
+      // Show success notification
+      $q.notify({
+        type: 'positive',
+        message: result.message || 'Application submitted successfully!',
+        position: 'top',
+        timeout: 5000
+      });
+
+      console.log('TVET application submitted successfully');
+    } else {
+      throw new Error(result.message || 'Failed to submit application');
+    }
   } catch (error) {
-    console.error('Error submitting modal form:', error);
+    console.error('Error submitting TVET application:', error);
+    $q.notify({
+      type: 'negative',
+      message: error.message || 'Failed to submit application. Please try again.',
+      position: 'top',
+      timeout: 5000
+    });
   } finally {
     isModalSubmitting.value = false;
   }

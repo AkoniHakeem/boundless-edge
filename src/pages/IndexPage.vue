@@ -202,18 +202,6 @@
             </ul>
           </div>
 
-          <!-- Development Notice -->
-          <div v-if="!isEmailJSConfigured()" class="dev-notice">
-            <q-banner class="bg-orange-2 text-orange-9">
-              <template v-slot:avatar>
-                <q-icon name="warning" />
-              </template>
-              <strong>Development Mode:</strong> EmailJS is not configured. Form
-              submissions will show a configuration error. See
-              docs/EMAILJS_SETUP.md for setup instructions.
-            </q-banner>
-          </div>
-
           <q-form
             class="contact-form"
             @submit="onSubmit"
@@ -339,12 +327,6 @@
 <script>
 import { defineComponent, ref, onMounted } from 'vue';
 import { useQuasar } from 'quasar';
-import emailjs from '@emailjs/browser';
-import {
-  emailJSConfig,
-  isEmailJSConfigured,
-  isAutoReplyConfigured,
-} from '../config/emailjs.js';
 
 export default defineComponent({
   name: 'IndexPage',
@@ -617,64 +599,35 @@ export default defineComponent({
       isSubmitting.value = true;
 
       try {
-        // Check if EmailJS is properly configured
-        if (!isEmailJSConfigured()) {
-          throw new Error(
-            'EmailJS is not configured. Please check the setup instructions.'
-          );
-        }
-
-        // EmailJS configuration
-        const templateParams = {
-          from_name: form.value.name,
-          from_email: form.value.email,
-          company: form.value.company || 'Not specified',
-          project_type: form.value.projectType || 'Not specified',
+        // Prepare the data for our Netlify function
+        const formData = {
+          name: form.value.name,
+          email: form.value.email,
+          company: form.value.company || '',
+          projectType: form.value.projectType || '',
           message: form.value.message,
-          to_email: 'dev@boundlesedge.com', // Your email
-          submission_date: new Date().toLocaleString('en-US', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'long',
-            day: 'numeric',
-            hour: '2-digit',
-            minute: '2-digit',
-            timeZoneName: 'short',
-          }),
         };
 
-        // Send email using EmailJS
-        // 1. Send notification email to business
-        await emailjs.send(
-          emailJSConfig.serviceId,
-          emailJSConfig.templateId, // Your business notification template
-          templateParams,
-          emailJSConfig.publicKey
-        );
+        // Send to our Netlify function
+        const response = await fetch('/.netlify/functions/contact', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
 
-        // 2. Send auto-reply confirmation to customer (if configured)
-        if (isAutoReplyConfigured()) {
-          try {
-            await emailjs.send(
-              emailJSConfig.serviceId,
-              emailJSConfig.autoReplyTemplateId, // Auto-reply template
-              {
-                ...templateParams,
-                to_email: form.value.email, // Send to customer instead
-              },
-              emailJSConfig.publicKey
-            );
-          } catch (autoReplyError) {
-            console.warn('Auto-reply failed:', autoReplyError);
-            // Don't fail the entire process if auto-reply fails
-          }
+        const result = await response.json();
+
+        if (!response.ok) {
+          throw new Error(result.message || 'Failed to send message');
         }
 
         $q.notify({
           color: 'positive',
-          message: isAutoReplyConfigured()
-            ? "Thank you! Your message has been sent and you'll receive a confirmation email shortly."
-            : "Message sent successfully! We'll get back to you soon.",
+          message:
+            result.message ||
+            "Thank you! Your message has been sent and you'll receive a confirmation email shortly.",
           icon: 'check_circle',
           timeout: 5000,
         });
@@ -693,25 +646,13 @@ export default defineComponent({
           contactFormSection.value.resetValidation();
         }
       } catch (error) {
-        console.error('EmailJS Error:', error);
+        console.error('Contact form error:', error);
 
         let errorMessage =
-          'Failed to send message. Please try again or contact us directly.';
+          'Failed to send message. Please try again or contact us directly at service@boundlessedge.com';
 
-        if (
-          error.message &&
-          error.message.includes('EmailJS is not configured')
-        ) {
-          errorMessage =
-            'Email service is not configured. Please contact us directly at dev@boundlesedge.com';
-        } else if (error.text) {
-          // EmailJS specific errors
-          if (error.text.includes('The user ID is required')) {
-            errorMessage =
-              'Email service configuration error. Please try again later.';
-          } else if (error.text.includes('Template')) {
-            errorMessage = 'Email template error. Please try again later.';
-          }
+        if (error.message) {
+          errorMessage = error.message;
         }
 
         $q.notify({
@@ -769,8 +710,6 @@ export default defineComponent({
       contactFormSection,
       scrollToSection,
       isValidEmail,
-      isEmailJSConfigured,
-      isAutoReplyConfigured,
       onSubmit,
     };
   },

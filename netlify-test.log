@@ -1,0 +1,28 @@
+nohup: ignoring input
+⬥ Injecting environment variable values for all scopes
+⬥ Ignored general context env var: LANG (defined in process)
+⬥ Injected netlify.toml file env vars: NODE_VERSION
+⬥ Injected .env file env vars: EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, EMAILJS_AUTO_REPLY_TEMPLATE_ID, EMAILJS_PUBLIC_KEY, RESEND_API_KEY
+⬥ No app server detected. Using simple static server
+⬥ Running static server from "boundless-edge/dist/spa"
+⬥ Setting up local dev server
+
+⬥ Static server listening to 3999
+
+   ╭─────────────────────── ⬥  ────────────────────────╮
+   │                                                   │
+   │   Local dev server ready: http://localhost:8888   │
+   │                                                   │
+   ╰───────────────────────────────────────────────────╯
+
+⬥ Loaded function apply-tvet in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+⬥ Loaded function contact in Lambda compatibility mode (https://ntl.fyi/lambda-compat)
+Request from ::1: POST /.netlify/functions/contact
+Contact form processed: {
+  client: 'John Doe',
+  email: 'john.doe@example.com',
+  projectType: 'Website Development',
+  clientEmailId: undefined,
+  adminEmailId: undefined
+}
+Response with status 200 in 1303 ms.
