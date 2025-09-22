@@ -23,7 +23,7 @@ export const handler: Handler = async (event) => {
       };
     }
 
-            // Send confirmation email to client
+    // Send confirmation email to client
     const clientEmail = await resend.emails.send({
       from: 'Boundless Edge <noreply@exchange.boundlesedge.com>',
       to: [email],

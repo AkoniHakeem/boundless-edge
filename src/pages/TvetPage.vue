@@ -579,6 +579,8 @@
                       :options="trackOptions"
                       option-label="label"
                       option-value="value"
+                      emit-value
+                      map-options
                       label="Choose Your Track *"
                       filled
                       required
@@ -1751,7 +1753,8 @@ const onModalSubmit = async () => {
     $q.notify({
       type: 'negative',
       message:
-        (error as Error).message || 'Failed to submit application. Please try again.',
+        (error as Error).message ||
+        'Failed to submit application. Please try again.',
       position: 'top',
       timeout: 5000,
     });

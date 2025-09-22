@@ -13,7 +13,12 @@ export const handler: Handler = async (event) => {
 
   try {
     const data = JSON.parse(event.body || '{}');
-    const { name, email, phone, track, message } = data;
+    const { name, email, phone, track: rawTrack, message } = data;
+
+    // Handle track field - could be object or string
+    const track = typeof rawTrack === 'object' && rawTrack !== null 
+      ? rawTrack.label || rawTrack.value || String(rawTrack)
+      : String(rawTrack || '');
 
     // Validate required fields
     if (!name || !email || !phone || !track) {
