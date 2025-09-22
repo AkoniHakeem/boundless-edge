@@ -23,11 +23,11 @@ export const handler: Handler = async (event) => {
       };
     }
 
-        // Send confirmation email to client
+            // Send confirmation email to client
     const clientEmail = await resend.emails.send({
-      from: 'Boundless Edge <onboarding@resend.dev>',
+      from: 'Boundless Edge <noreply@exchange.boundlesedge.com>',
       to: [email],
-      subject: 'Thanks for reaching out - We received your message!',
+      subject: 'We received your message - Thank you for reaching out!',
       html: `
         <!DOCTYPE html>
         <html>
@@ -114,7 +114,7 @@ export const handler: Handler = async (event) => {
 
     // Send notification email to admin
     const adminEmail = await resend.emails.send({
-      from: 'Contact Form <onboarding@resend.dev>',
+      from: 'Contact Form <notifications@exchange.boundlesedge.com>',
       to: ['service@boundlesedge.com'],
       subject: `New Contact Form Submission: ${
         projectType || 'General Inquiry'

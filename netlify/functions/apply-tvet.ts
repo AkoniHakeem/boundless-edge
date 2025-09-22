@@ -25,7 +25,7 @@ export const handler: Handler = async (event) => {
 
     // Send confirmation email to applicant
     const applicantEmail = await resend.emails.send({
-      from: 'Boundless Edge TVET <onboarding@resend.dev>',
+      from: 'Boundless Edge <noreply@exchange.boundlesedge.com>',
       to: [email],
       subject: 'TVET Program Application Received - Next Steps',
       html: `
@@ -102,7 +102,7 @@ export const handler: Handler = async (event) => {
 
     // Send notification email to admin
     const adminEmail = await resend.emails.send({
-      from: 'TVET Applications <onboarding@resend.dev>',
+      from: 'TVET Applications <notifications@exchange.boundlesedge.com>',
       to: ['service@boundlesedge.com'],
       subject: `New TVET Application: ${track} - ${name}`,
       html: `
