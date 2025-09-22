@@ -1080,6 +1080,7 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from 'vue';
 import { useRoute, useRouter } from 'vue-router';
+import { useQuasar } from 'quasar';
 
 // Interfaces
 interface Program {
@@ -1144,6 +1145,7 @@ interface Category {
 // Router setup
 const route = useRoute();
 const router = useRouter();
+const $q = useQuasar();
 
 // Reactive data
 const showProgramModal = ref(false);
@@ -1737,7 +1739,7 @@ const onModalSubmit = async () => {
         type: 'positive',
         message: result.message || 'Application submitted successfully!',
         position: 'top',
-        timeout: 5000
+        timeout: 5000,
       });
 
       console.log('TVET application submitted successfully');
@@ -1748,9 +1750,10 @@ const onModalSubmit = async () => {
     console.error('Error submitting TVET application:', error);
     $q.notify({
       type: 'negative',
-      message: error.message || 'Failed to submit application. Please try again.',
+      message:
+        (error as Error).message || 'Failed to submit application. Please try again.',
       position: 'top',
-      timeout: 5000
+      timeout: 5000,
     });
   } finally {
     isModalSubmitting.value = false;
