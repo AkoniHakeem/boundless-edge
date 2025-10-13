@@ -16,9 +16,10 @@ export const handler: Handler = async (event) => {
     const { name, email, phone, track: rawTrack, message } = data;
 
     // Handle track field - could be object or string
-    const track = typeof rawTrack === 'object' && rawTrack !== null 
-      ? rawTrack.label || rawTrack.value || String(rawTrack)
-      : String(rawTrack || '');
+    const track =
+      typeof rawTrack === 'object' && rawTrack !== null
+        ? rawTrack.label || rawTrack.value || String(rawTrack)
+        : String(rawTrack || '');
 
     // Validate required fields
     if (!name || !email || !phone || !track) {
