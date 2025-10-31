@@ -11,7 +11,8 @@
         <div class="banner-overlay">
           <h1 class="banner-title">Investment Forum</h1>
           <p class="banner-subtitle">
-            An Exclusive Opportunity to Invest in Nigeria's Next Foundational Ventures
+            An Exclusive Opportunity to Invest in Nigeria's Next Foundational
+            Ventures
           </p>
           <div class="banner-meta">
             <div class="meta-item">
@@ -394,11 +395,96 @@ import axios from 'axios';
 
 const $q = useQuasar();
 
-// Prevent page from being indexed by search engines
+// Meta tags for SEO and social media sharing
 useMeta({
+  title: 'Investment Forum - Boundless Edge',
+  titleTemplate: (title) => `${title}`,
   meta: {
-    robots: { name: 'robots', content: 'noindex, nofollow' }
-  }
+    description: {
+      name: 'description',
+      content:
+        "Join Boundless Edge Investment Forum on November 5, 2025. An exclusive opportunity to invest in Nigeria's next foundational ventures - WastePro, TVET, and Stint360.",
+    },
+    keywords: {
+      name: 'keywords',
+      content:
+        'investment forum, Nigeria startups, venture capital, EdTech, WasteTech, AI learning, Boundless Edge',
+    },
+    robots: {
+      name: 'robots',
+      content: 'noindex, nofollow',
+    },
+
+    // Open Graph / Facebook
+    ogType: {
+      property: 'og:type',
+      content: 'website',
+    },
+    ogUrl: {
+      property: 'og:url',
+      content: 'https://boundlesedge.com/investment-forum/v1',
+    },
+    ogTitle: {
+      property: 'og:title',
+      content: '🚀 Boundless Edge Investment Forum | Nov 5, 2025',
+    },
+    ogDescription: {
+      property: 'og:description',
+      content:
+        '📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria\'s foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv',
+    },
+    ogImage: {
+      property: 'og:image',
+      content:
+        'https://boundlesedge.com/images/boudless-edge-investment-forum-img.png',
+    },
+    ogImageWidth: {
+      property: 'og:image:width',
+      content: '1200',
+    },
+    ogImageHeight: {
+      property: 'og:image:height',
+      content: '630',
+    },
+    ogSiteName: {
+      property: 'og:site_name',
+      content: 'Boundless Edge',
+    },
+    ogLocale: {
+      property: 'og:locale',
+      content: 'en_US',
+    },
+
+    // Twitter
+    twitterCard: {
+      name: 'twitter:card',
+      content: 'summary_large_image',
+    },
+    twitterUrl: {
+      name: 'twitter:url',
+      content: 'https://boundlesedge.com/investment-forum/v1',
+    },
+    twitterTitle: {
+      name: 'twitter:title',
+      content: '🚀 Boundless Edge Investment Forum | Nov 5, 2025',
+    },
+    twitterDescription: {
+      name: 'twitter:description',
+      content:
+        '📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria\'s foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv',
+    },
+    twitterImage: {
+      name: 'twitter:image',
+      content:
+        'https://boundlesedge.com/images/boudless-edge-investment-forum-img.png',
+    },
+  },
+  link: {
+    canonical: {
+      rel: 'canonical',
+      href: 'https://boundlesedge.com/investment-forum/v1',
+    },
+  },
 });
 
 const form = ref({
@@ -474,15 +560,17 @@ const onSubmit = async () => {
 .hero-banner-image {
   position: relative;
   width: 100%;
-  min-height: 400px;
-  max-height: 600px;
-  
+  min-height: 300px;
+  max-height: 450px;
+
   @media (min-width: 768px) {
-    min-height: 500px;
+    min-height: 350px;
+    max-height: 500px;
   }
-  
+
   @media (min-width: 1024px) {
-    min-height: 600px;
+    min-height: 400px;
+    max-height: 550px;
   }
 }
 
@@ -490,7 +578,7 @@ const onSubmit = async () => {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center center;
+  object-position: center 40%;
   display: block;
 }
 
