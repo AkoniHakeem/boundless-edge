@@ -1,34 +1,26 @@
 <template>
   <q-page class="investment-forum-page">
-    <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="hero-container">
-        <div class="hero-grid">
-          <!-- Logo/Brand -->
-          <div class="hero-logo">
-            <img
-              src="/images/Boundless_Edge_-Logo-nobg.png"
-              alt="Boundless Edge Logo"
-              class="logo-image"
-            />
-          </div>
-
-          <!-- Hero Text -->
-          <div class="hero-text">
-            <h1 class="hero-title">Investment Forum</h1>
-            <p class="hero-subtitle">
-              An Exclusive Opportunity to Invest in Nigeria's Next Foundational
-              Ventures
-            </p>
-            <div class="event-meta">
-              <div class="meta-item">
-                <q-icon name="event" size="1.5rem" color="boundless-blue" />
-                <span>Wednesday, November 5, 2025</span>
-              </div>
-              <div class="meta-item">
-                <q-icon name="schedule" size="1.5rem" color="boundless-blue" />
-                <span>10:00 - 11:00 AM (UTC)</span>
-              </div>
+    <!-- Hero Banner Image -->
+    <section class="hero-banner">
+      <div class="hero-banner-image">
+        <img
+          src="/images/boudless-edge-investment-forum-img.png"
+          alt="Boundless Edge - WastePro, TVET, and Stint360 Ecosystem"
+          class="banner-image"
+        />
+        <div class="banner-overlay">
+          <h1 class="banner-title">Investment Forum</h1>
+          <p class="banner-subtitle">
+            An Exclusive Opportunity to Invest in Nigeria's Next Foundational Ventures
+          </p>
+          <div class="banner-meta">
+            <div class="meta-item">
+              <q-icon name="event" size="1.5rem" />
+              <span>Wednesday, November 5, 2025</span>
+            </div>
+            <div class="meta-item">
+              <q-icon name="schedule" size="1.5rem" />
+              <span>10:00 - 11:00 AM (UTC)</span>
             </div>
           </div>
         </div>
@@ -472,82 +464,86 @@ const onSubmit = async () => {
   font-family: 'Inter', sans-serif;
 }
 
-// Hero Section
-.hero-section {
-  background: linear-gradient(135deg, #00050d 0%, #001a33 100%);
-  color: white;
-  padding: 4rem 1.5rem;
+// Hero Banner Section
+.hero-banner {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
 
+.hero-banner-image {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  max-height: 600px;
+  
   @media (min-width: 768px) {
-    padding: 6rem 1.5rem;
+    min-height: 500px;
+  }
+  
+  @media (min-width: 1024px) {
+    min-height: 600px;
   }
 }
 
-.hero-container {
-  max-width: 1200px;
-  margin: 0 auto;
+.banner-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
-.hero-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-
-  @media (min-width: 768px) {
-    grid-template-columns: 1fr 2fr;
-  }
-}
-
-.hero-logo {
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 5, 13, 0.7) 0%,
+    rgba(0, 5, 13, 0.5) 50%,
+    rgba(0, 5, 13, 0.8) 100%
+  );
   display: flex;
+  flex-direction: column;
   justify-content: center;
-
-  .logo-image {
-    width: 12rem;
-    height: auto;
-
-    @media (min-width: 768px) {
-      width: 16rem;
-    }
-  }
-}
-
-.hero-text {
+  align-items: center;
+  padding: 2rem 1.5rem;
   text-align: center;
-
-  @media (min-width: 768px) {
-    text-align: left;
-  }
+  color: white;
 }
 
-.hero-title {
+.banner-title {
   font-size: 2.5rem;
   font-weight: 900;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
   line-height: 1.2;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 
   @media (min-width: 768px) {
     font-size: 3.5rem;
   }
 
   @media (min-width: 1024px) {
-    font-size: 4rem;
+    font-size: 4.5rem;
   }
 }
 
-.hero-subtitle {
-  font-size: 1.25rem;
-  color: #93c5fd;
+.banner-subtitle {
+  font-size: 1.125rem;
+  color: #e0f2fe;
   font-weight: 500;
   margin-bottom: 2rem;
+  max-width: 800px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
 
   @media (min-width: 768px) {
     font-size: 1.5rem;
   }
 }
 
-.event-meta {
+.banner-meta {
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -557,18 +553,20 @@ const onSubmit = async () => {
   @media (min-width: 768px) {
     flex-direction: row;
     justify-content: center;
+    gap: 2rem;
     font-size: 1rem;
   }
 
-  @media (min-width: 768px) {
-    justify-content: flex-start;
+  .meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(0, 170, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(0, 170, 255, 0.3);
   }
-}
-
-.meta-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
 }
 
 // Content Container
