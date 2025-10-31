@@ -397,10 +397,17 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
-import { useQuasar } from 'quasar';
+import { useQuasar, useMeta } from 'quasar';
 import axios from 'axios';
 
 const $q = useQuasar();
+
+// Prevent page from being indexed by search engines
+useMeta({
+  meta: {
+    robots: { name: 'robots', content: 'noindex, nofollow' }
+  }
+});
 
 const form = ref({
   fullName: '',

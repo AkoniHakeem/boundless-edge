@@ -1,12 +1,19 @@
 User-agent: *
-Allow: /
+# Only allow home page and TVET page
+Allow: /$
+Allow: /tvet$
+Allow: /tvet/
+
+# Disallow everything else
+Disallow: /
 
 # Sitemap
 Sitemap: https://boundlessedge.com/sitemap.xml
 
-# Disallow certain paths if needed
-# Disallow: /admin/
-# Disallow: /private/
+# Specifically disallow private/internal pages
+Disallow: /investment-forum/
+Disallow: /projects/
+Disallow: /admin/
 
 # Crawl delay
 Crawl-delay: 1
