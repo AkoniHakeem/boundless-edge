@@ -290,13 +290,6 @@
                   ></span
                 >
               </li>
-              <li>
-                <q-icon name="check" size="1.2rem" color="positive" />
-                <span
-                  >We'll send you the presentation deck 24 hours before the
-                  forum</span
-                >
-              </li>
             </ul>
           </div>
           <p class="event-reminder">
@@ -426,7 +419,8 @@ useMeta({
     },
     ogTitle: {
       property: 'og:title',
-      content: "AN OPPORTUNITY TO INVEST IN NIGERIA'S NEXT FOUNDATIONAL VENTURES",
+      content:
+        "AN OPPORTUNITY TO INVEST IN NIGERIA'S NEXT FOUNDATIONAL VENTURES",
     },
     ogDescription: {
       property: 'og:description',
@@ -480,7 +474,8 @@ useMeta({
     },
     twitterTitle: {
       property: 'twitter:title',
-      content: "AN OPPORTUNITY TO INVEST IN NIGERIA'S NEXT FOUNDATIONAL VENTURES",
+      content:
+        "AN OPPORTUNITY TO INVEST IN NIGERIA'S NEXT FOUNDATIONAL VENTURES",
     },
     twitterDescription: {
       property: 'twitter:description',
