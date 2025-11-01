@@ -1,3 +1,6 @@
+# Investment Forum page - serve static HTML with proper meta tags for social media crawlers
+/investment-forum/v1    /investment-forum-v1.html   200
+
 # Netlify redirects for SPA
 /*    /index.html   200
 

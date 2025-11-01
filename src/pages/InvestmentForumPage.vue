@@ -431,7 +431,7 @@ useMeta({
     ogDescription: {
       property: 'og:description',
       content:
-        '📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria\'s foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv',
+        "📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria's foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv",
     },
     ogImage: {
       property: 'og:image',
@@ -440,7 +440,8 @@ useMeta({
     },
     ogImageAlt: {
       property: 'og:image:alt',
-      content: 'Boundless Edge Investment Forum - WastePro, TVET, and Stint360 Ecosystem',
+      content:
+        'Boundless Edge Investment Forum - WastePro, TVET, and Stint360 Ecosystem',
     },
     ogImageType: {
       property: 'og:image:type',
@@ -484,7 +485,7 @@ useMeta({
     twitterDescription: {
       property: 'twitter:description',
       content:
-        '📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria\'s foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv',
+        "📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria's foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv",
     },
     twitterImage: {
       property: 'twitter:image',
@@ -493,7 +494,8 @@ useMeta({
     },
     twitterImageAlt: {
       property: 'twitter:image:alt',
-      content: 'Boundless Edge Investment Forum - WastePro, TVET, and Stint360 Ecosystem',
+      content:
+        'Boundless Edge Investment Forum - WastePro, TVET, and Stint360 Ecosystem',
     },
   },
   link: {
