@@ -438,13 +438,26 @@ useMeta({
       content:
         'https://boundlesedge.com/images/boudless-edge-investment-forum-img.png',
     },
+    ogImageAlt: {
+      property: 'og:image:alt',
+      content: 'Boundless Edge Investment Forum - WastePro, TVET, and Stint360 Ecosystem',
+    },
+    ogImageType: {
+      property: 'og:image:type',
+      content: 'image/png',
+    },
     ogImageWidth: {
       property: 'og:image:width',
-      content: '1200',
+      content: '1024',
     },
     ogImageHeight: {
       property: 'og:image:height',
-      content: '630',
+      content: '946',
+    },
+    ogImageSecure: {
+      property: 'og:image:secure_url',
+      content:
+        'https://boundlesedge.com/images/boudless-edge-investment-forum-img.png',
     },
     ogSiteName: {
       property: 'og:site_name',
@@ -457,26 +470,30 @@ useMeta({
 
     // Twitter
     twitterCard: {
-      name: 'twitter:card',
+      property: 'twitter:card',
       content: 'summary_large_image',
     },
     twitterUrl: {
-      name: 'twitter:url',
+      property: 'twitter:url',
       content: 'https://boundlesedge.com/investment-forum/v1',
     },
     twitterTitle: {
-      name: 'twitter:title',
+      property: 'twitter:title',
       content: '🚀 Boundless Edge Investment Forum | Nov 5, 2025',
     },
     twitterDescription: {
-      name: 'twitter:description',
+      property: 'twitter:description',
       content:
         '📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria\'s foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv',
     },
     twitterImage: {
-      name: 'twitter:image',
+      property: 'twitter:image',
       content:
         'https://boundlesedge.com/images/boudless-edge-investment-forum-img.png',
+    },
+    twitterImageAlt: {
+      property: 'twitter:image:alt',
+      content: 'Boundless Edge Investment Forum - WastePro, TVET, and Stint360 Ecosystem',
     },
   },
   link: {
