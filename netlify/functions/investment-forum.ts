@@ -258,7 +258,6 @@ export const handler: Handler = async (event) => {
               <h3 style="margin-top: 0; color: #78350f; font-size: 18px;">📝 Action Items</h3>
               <ul style="color: #78350f; margin: 0; padding-left: 20px;">
                 <li>Add to investor tracking spreadsheet</li>
-                <li>Send pitch deck 24 hours before the event</li>
                 <li>Prepare personalized follow-up</li>
               </ul>
             </div>
