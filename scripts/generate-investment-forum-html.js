@@ -52,7 +52,7 @@ html = html.replace(
 
 // Insert new meta tags for investment forum after the charset meta tag
 const newMetaTags = `<meta charset=utf-8>
-  <meta name=description content="An opportunity to invest in Nigeria's next foundational ventures. Have you ever thought about the real-world problems that, once solved, create entire new markets? Think about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors. What if you could invest in a company tackling several of these challenges at once? We are holding an online investment forum to present our full vision, financials, and the terms of this offer.">
+  <meta name=description content="An opportunity to invest in Nigeria's next foundational ventures. Have you ever thought about the real-world problems that, once solved, create entire new markets? Think about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors. What if you could invest in a company tackling several of these challenges at once? We are holding an online investment forum to present our full vision, financials, and the terms of this offer. Limited seats available.">
   <meta name=robots content="noindex, nofollow">
   <meta property=og:type content=website>
   <meta property=og:url content="https://boundlesedge.com/investment-forum/v1">
@@ -64,6 +64,8 @@ Think about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine havin
 What if you could invest in a company tackling several of these challenges at once?
 
 We are holding an online investment forum to present our full vision, financials, and the terms of this offer.
+
+⚠️ LIMITED SEATS AVAILABLE
 
 Date: Wednesday, 5th November, 2025
 Time: 12:00noon
@@ -89,6 +91,8 @@ Think about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine havin
 What if you could invest in a company tackling several of these challenges at once?
 
 We are holding an online investment forum to present our full vision, financials, and the terms of this offer.
+
+⚠️ LIMITED SEATS AVAILABLE
 
 Date: Wednesday, 5th November, 2025
 Time: 12:00noon

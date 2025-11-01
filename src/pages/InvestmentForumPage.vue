@@ -23,6 +23,10 @@
               <q-icon name="schedule" size="1.5rem" />
               <span>12:00 noon (UTC)</span>
             </div>
+            <div class="meta-item limited-seats">
+              <q-icon name="people" size="1.5rem" />
+              <span>Limited Seats Available</span>
+            </div>
           </div>
         </div>
       </div>
@@ -255,6 +259,10 @@
             Register your interest and receive the meeting link and presentation
             materials
           </p>
+          <div class="limited-seats-banner">
+            <q-icon name="info" size="1.2rem" />
+            <span><strong>Limited Seats Available</strong> - Register now to secure your spot</span>
+          </div>
         </div>
 
         <!-- Thank You Message -->
@@ -425,7 +433,7 @@ useMeta({
     ogDescription: {
       property: 'og:description',
       content:
-        'Have you ever thought about the real-world problems that, once solved, create entire new markets?\n\nThink about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors.\n\nWhat if you could invest in a company tackling several of these challenges at once?\n\nWe are holding an online investment forum to present our full vision, financials, and the terms of this offer.\n\nDate: Wednesday, 5th November, 2025\nTime: 12:00noon\nPlatform: Google Meet (A private link will be sent upon RSVP)\n\nFollow the link below to register:\nhttps://boundlesedge.com/investment-forum/v1',
+        'Have you ever thought about the real-world problems that, once solved, create entire new markets?\n\nThink about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors.\n\nWhat if you could invest in a company tackling several of these challenges at once?\n\nWe are holding an online investment forum to present our full vision, financials, and the terms of this offer.\n\n⚠️ LIMITED SEATS AVAILABLE\n\nDate: Wednesday, 5th November, 2025\nTime: 12:00noon\nPlatform: Google Meet (A private link will be sent upon RSVP)\n\nFollow the link below to register:\nhttps://boundlesedge.com/investment-forum/v1',
     },
     ogImage: {
       property: 'og:image',
@@ -480,7 +488,7 @@ useMeta({
     twitterDescription: {
       property: 'twitter:description',
       content:
-        'Have you ever thought about the real-world problems that, once solved, create entire new markets?\n\nThink about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors.\n\nWhat if you could invest in a company tackling several of these challenges at once?\n\nWe are holding an online investment forum to present our full vision, financials, and the terms of this offer.\n\nDate: Wednesday, 5th November, 2025\nTime: 12:00noon\nPlatform: Google Meet (A private link will be sent upon RSVP)\n\nFollow the link below to register:\nhttps://boundlesedge.com/investment-forum/v1',
+        'Have you ever thought about the real-world problems that, once solved, create entire new markets?\n\nThink about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors.\n\nWhat if you could invest in a company tackling several of these challenges at once?\n\nWe are holding an online investment forum to present our full vision, financials, and the terms of this offer.\n\n⚠️ LIMITED SEATS AVAILABLE\n\nDate: Wednesday, 5th November, 2025\nTime: 12:00noon\nPlatform: Google Meet (A private link will be sent upon RSVP)\n\nFollow the link below to register:\nhttps://boundlesedge.com/investment-forum/v1',
     },
     twitterImage: {
       property: 'twitter:image',
@@ -669,6 +677,22 @@ const onSubmit = async () => {
     border-radius: 2rem;
     backdrop-filter: blur(10px);
     border: 1px solid rgba(0, 170, 255, 0.3);
+
+    &.limited-seats {
+      background: rgba(245, 158, 11, 0.2);
+      border: 1px solid rgba(245, 158, 11, 0.5);
+      animation: pulse 2s ease-in-out infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
 
@@ -1078,6 +1102,25 @@ const onSubmit = async () => {
 .form-subtitle {
   font-size: 1.125rem;
   color: #6b7280;
+}
+
+.limited-seats-banner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  color: #78350f;
+  padding: 1rem 1.5rem;
+  border-radius: 0.75rem;
+  margin-top: 1.5rem;
+  border: 2px solid #f59e0b;
+  font-size: 0.95rem;
+  animation: pulse 2s ease-in-out infinite;
+
+  strong {
+    font-weight: 700;
+  }
 }
 
 // Thank You Card
