@@ -67,7 +67,7 @@ export const handler: Handler = async (event) => {
                 <div style="margin: 15px 0;">
                   <div style="display: inline-block; vertical-align: top; margin: 10px 0;">
                     <strong style="font-size: 16px;">🕐 Time:</strong>
-                    <p style="margin: 5px 0 0 0; font-size: 16px;">10:00 - 11:00 AM (UTC)</p>
+                    <p style="margin: 5px 0 0 0; font-size: 16px;">12:00 noon (UTC)</p>
                   </div>
                 </div>
 
@@ -128,7 +128,7 @@ export const handler: Handler = async (event) => {
               <div style="background: #fef3c7; border-left: 4px solid #f59e0b; padding: 20px; border-radius: 8px; margin: 25px 0;">
                 <h4 style="margin-top: 0; color: #78350f; font-size: 18px;">📋 Next Steps</h4>
                 <ol style="color: #78350f; font-size: 15px; line-height: 1.8; margin: 0; padding-left: 20px;">
-                  <li><strong>Add to Calendar:</strong> Mark November 5, 2025 at 10:00 AM UTC</li>
+                  <li><strong>Add to Calendar:</strong> Mark November 5, 2025 at 12:00 noon UTC</li>
                   <li><strong>Save the Meeting Link:</strong> Bookmark the Google Meet link above</li>
                   <li><strong>Prepare Questions:</strong> Think about what you'd like to know</li>
                 </ol>

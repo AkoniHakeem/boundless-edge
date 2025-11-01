@@ -21,7 +21,7 @@
             </div>
             <div class="meta-item">
               <q-icon name="schedule" size="1.5rem" />
-              <span>10:00 - 11:00 AM (UTC)</span>
+              <span>12:00 noon (UTC)</span>
             </div>
           </div>
         </div>
@@ -209,7 +209,7 @@
                   />
                   <div>
                     <p class="detail-label">Time</p>
-                    <p class="detail-value">10:00 - 11:00 AM (UTC)</p>
+                    <p class="detail-value">12:00 noon (UTC)</p>
                   </div>
                 </div>
                 <div class="detail-item">
@@ -300,7 +300,7 @@
             </ul>
           </div>
           <p class="event-reminder">
-            See you on Wednesday, November 5, 2025 at 10:00 AM (UTC)
+            See you on Wednesday, November 5, 2025 at 12:00 noon (UTC)
           </p>
         </div>
 
@@ -403,7 +403,7 @@ useMeta({
     description: {
       name: 'description',
       content:
-        "Join Boundless Edge Investment Forum on November 5, 2025. An exclusive opportunity to invest in Nigeria's next foundational ventures - WastePro, TVET, and Stint360.",
+        "An opportunity to invest in Nigeria's next foundational ventures. Have you ever thought about the real-world problems that, once solved, create entire new markets? Think about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors. What if you could invest in a company tackling several of these challenges at once? We are holding an online investment forum to present our full vision, financials, and the terms of this offer.",
     },
     keywords: {
       name: 'keywords',
@@ -426,12 +426,12 @@ useMeta({
     },
     ogTitle: {
       property: 'og:title',
-      content: '🚀 Boundless Edge Investment Forum | Nov 5, 2025',
+      content: "AN OPPORTUNITY TO INVEST IN NIGERIA'S NEXT FOUNDATIONAL VENTURES",
     },
     ogDescription: {
       property: 'og:description',
       content:
-        "📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria's foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv",
+        'Have you ever thought about the real-world problems that, once solved, create entire new markets?\n\nThink about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors.\n\nWhat if you could invest in a company tackling several of these challenges at once?\n\nWe are holding an online investment forum to present our full vision, financials, and the terms of this offer.\n\nDate: Wednesday, 5th November, 2025\nTime: 12:00noon\nPlatform: Google Meet (A private link will be sent upon RSVP)\n\nFollow the link below to register:\nhttps://boundlesedge.com/investment-forum/v1',
     },
     ogImage: {
       property: 'og:image',
@@ -480,12 +480,12 @@ useMeta({
     },
     twitterTitle: {
       property: 'twitter:title',
-      content: '🚀 Boundless Edge Investment Forum | Nov 5, 2025',
+      content: "AN OPPORTUNITY TO INVEST IN NIGERIA'S NEXT FOUNDATIONAL VENTURES",
     },
     twitterDescription: {
       property: 'twitter:description',
       content:
-        "📅 November 5, 2025 | 🕐 10:00 AM UTC\n\nInvest in Nigeria's foundational tech infrastructure:\n✅ WastePro - Municipal waste digitization\n✅ TVET - Technical skills platform\n✅ Stint360 - AI-powered learning\n\n🔗 Join: https://meet.google.com/nop-aorj-yvv",
+        'Have you ever thought about the real-world problems that, once solved, create entire new markets?\n\nThink about how PAYSTACK and MONIEPOINT unlocked digital payments. Imagine having the opportunity to be an early-stage investor in the companies that will do the same for other foundational sectors.\n\nWhat if you could invest in a company tackling several of these challenges at once?\n\nWe are holding an online investment forum to present our full vision, financials, and the terms of this offer.\n\nDate: Wednesday, 5th November, 2025\nTime: 12:00noon\nPlatform: Google Meet (A private link will be sent upon RSVP)\n\nFollow the link below to register:\nhttps://boundlesedge.com/investment-forum/v1',
     },
     twitterImage: {
       property: 'twitter:image',
